@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 
 public class Solution_D3_5215_hamburger{
 	
-	static int L,max=0;
+	static int L,max;
 	
 	static void getScore(int[][] arr, int sBefore,int kBefore, int i) {
 		System.out.print("i = "+i+", ");
