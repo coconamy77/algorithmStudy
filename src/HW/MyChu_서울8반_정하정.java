@@ -3,7 +3,7 @@ package HW;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Person {
+/*class Person {
 	int num;
 	int name;
 
@@ -11,7 +11,7 @@ class Person {
 		this.name = name;
 		num = 1;
 	}
-}
+}*/
 
 public class MyChu_서울8반_정하정 {
 
@@ -30,11 +30,6 @@ public class MyChu_서울8반_정하정 {
 			if (mychu<=0) ans = p.name;
 			q.add(p);
 		}
-//		Person ansP = null;
-//		while (!q.isEmpty()) {
-//			ansP = q.poll();
-//		}
-//		System.out.println(ansP.name);
 		System.out.println(ans);
 	*/
 		Queue<int[]>q = new LinkedList<>();
@@ -51,9 +46,6 @@ public class MyChu_서울8반_정하정 {
 			q.add(tmp);
 		}
 		System.out.println(ans);
-		
-		
-		
 	}
 
 }
