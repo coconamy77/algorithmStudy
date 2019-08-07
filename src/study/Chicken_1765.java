@@ -2,14 +2,30 @@ package study;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Chicken_1765 {
-	
+
+	static boolean[] chk;
+	static int[][] s;
 	static int count = 0;
-	void getNum() {
+
+	static void getCount(int me, int friend,int rs) {
 		
+		if (rs ==1) {
+			if (chk[friend])return;
+			chk[friend] = true;
+		 }
+		for (int i = 0; i < s.length; i++) {
+			if (i == me)
+				continue;
+			if (s[friend][i] == rs) {
+				getCount(friend, i,1);
+			}
+			
+		}/*
+		System.out.println("i = "+me+", j = "+friend+", count = "+count);
+		System.out.println(Arrays.toString(chk));*/
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -18,7 +34,8 @@ public class Chicken_1765 {
 
 		int n = Integer.parseInt(br.readLine());
 
-		int[][] s = new int[n][n];
+		s = new int[n][n];
+		chk = new boolean[n];
 
 		int m = Integer.parseInt(br.readLine());
 
@@ -34,24 +51,20 @@ public class Chicken_1765 {
 			s[s2 - 1][s1 - 1] = s[s1 - 1][s2 - 1];
 		}
 
-		for (int[] a : s) {
-			System.out.println(Arrays.toString(a));
-		}
-		System.out.println();
-		for (int k = 0; k < n; k++) {
-			for (int i = 0; i < n; i++) {
-				for (int j = i + 1; j < n; j++) {
-					if (s[k][i] == s[k][j] && s[k][i] != 0) {
-						s[i][j] = 1;
-						s[j][i] = 1;
-					}
+		for (int i = 0; i < n; i++) {
+			if (chk[i])
+				continue;
+			chk[i] = true;
+			count++;
+			for (int j = 0; j < n; j++) {
+				if (s[i][j] != 0) {
+					
+					getCount(i, j,s[i][j]);
 				}
 			}
-		}
-		for (int[] a : s) {
-			System.out.println(Arrays.toString(a));
-		}
 
+		}
+		System.out.println(count);
 	}
 
 }
