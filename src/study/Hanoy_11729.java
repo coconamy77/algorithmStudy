@@ -9,23 +9,17 @@ public class Hanoy_11729 {
 
 	static int count = 0;
 	static int idx;
-	static StringWriter sw = new StringWriter();
+	static StringBuilder sw = new StringBuilder();
 
 	static void move(int h, int i) {
 
 		int origin = i;
-		if (h == 2) {
-
-			for (int j = 1; j <= 3; j++) {
-				if (j != idx && j != origin) {
-					sw.append(origin + " ").append(j + "\n");
-					count++;
-				}
-			}
-			origin = idx;
-			idx = idx - 1 < 1 ? 3 : idx - 1;
+		if (h == 1) {
+			origin = i;
+			idx = i - 1 < 1 ? 3 : i - 1;
 			count++;
 			sw.append(origin + " ").append(idx + "\n");
+			
 
 		} else {
 			for (int j = 1; j <= 3; j++) {
@@ -35,21 +29,23 @@ public class Hanoy_11729 {
 					break;
 				}
 			}
-
-			move(h - 1, idx);
+			int nOrigin = idx;
+			for (int n=1;n<=h-1;n++) {
+				move(n,nOrigin);
+			}
 		}
 	}
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
-		idx = 3;
-		count++;
-		sw.append(1 + " ").append(idx + "\n");
-		for (int h = 2; h <= n; h++) {
+		//idx = 1;
+		
+		
+		for (int h = 1; h <= n; h++) {
 			move(h, 1);
 		}
 		System.out.println(count);
-		System.out.println(sw.toString());
+		System.out.print(sw);
 	}
 }
