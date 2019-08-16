@@ -23,15 +23,20 @@ public class HideAndSeek_1697 {
 		vst[subin] = 0;
 		int count = 0;
 		boolean chk = true;
+		if (subin == sis) {
+			System.out.println(count);
+			chk = false;
+		}
 
 		while (chk && !q.isEmpty()) {
 			
 			int a = q.poll();
 			
 			count = vst[a]+1;
-			int[] dd = { 1, -1, subin };
+			int[] dd = { 1, -1, a };
 			for (int i = 0; i < 3; i++) {
 				int nsubin = a+dd[i];
+				
 				if (nsubin<0 || nsubin> 100000  || vst[nsubin]!=0) {
 					continue;
 				}
@@ -41,7 +46,6 @@ public class HideAndSeek_1697 {
 					chk = false;
 					break;
 				}else {
-					
 						vst[nsubin] = count;
 						q.add(nsubin);
 					
