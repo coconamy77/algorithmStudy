@@ -3,13 +3,34 @@ package study;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class BabyShark_16236 {
 	static int[][] map;
 	static int[] fish;
-
-	static int go(int x, int y, int size) {
+	static int x;
+	static int y;
+	static int size = 2;
+	
+	static int findWay(int i, int j) {
+		int[] dx = {0,1,0,-1};
+		int[] dy = {1,0,-1,0};
+		
+		Queue<Integer> q = new LinkedList<Integer>();
+		
+		q.add(i*50+j);
+		
+		while(!q.isEmpty()) {
+			
+		}
+		
+		
+		return 0;
+	}
+	
+	static int go() {
 
 		int f = 0;
 		int eat = 0;
@@ -30,7 +51,9 @@ public class BabyShark_16236 {
 						break;
 					}
 					if (map[i][j] != 0 && map[i][j] < size) {
-						if (x - i < 0) {
+						distance = findWay(i,j);
+						
+						/*if (x - i < 0) {
 							if (y - j < 0)
 								distance = i - x + j - y;
 							else
@@ -40,7 +63,7 @@ public class BabyShark_16236 {
 								distance = x - i + j - y;
 							else
 								distance = x - i + y - j;
-						}
+						}*/
 						if (min > distance) {
 							min = distance;
 							nx = i;
@@ -54,7 +77,7 @@ public class BabyShark_16236 {
 			f--;
 			eat++;
 			ans += min;
-			System.out.println(map[nx][ny]);
+			System.out.println("+"+min+" = "+ans);
 			map[nx][ny] = 9;
 			map[x][y] = 0;
 			x = nx;
@@ -77,9 +100,6 @@ public class BabyShark_16236 {
 		int N = Integer.parseInt(br.readLine());
 		map = new int[N][N];
 		fish = new int[7];
-		int x = 0;
-		int y = 0;
-		int size = 2;
 		for (int i = 0; i < N; i++) {
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			for (int j = 0; j < N; j++) {
@@ -96,6 +116,6 @@ public class BabyShark_16236 {
 			}
 		}
 		
-		System.out.println(go(x, y, size));
+		System.out.println(go());
 	}
 }
