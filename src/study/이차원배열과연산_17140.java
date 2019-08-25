@@ -15,7 +15,8 @@ import java.util.StringTokenizer;
 public class 이차원배열과연산_17140 {
 	public static void main(String[] args) throws Exception {
 
-		int[][] arr = new int[100][100];
+		int[][
+		      ] arr = new int[100][100];
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
