@@ -1,3 +1,4 @@
+
 package study;
 
 import java.io.BufferedReader;
@@ -6,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Main_미세먼지안녕_17144 {
+public class Main_미세먼지안녕_17144{
 
 	static int[][] map;
 	static int upx = 0;
