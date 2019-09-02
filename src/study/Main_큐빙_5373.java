@@ -6,11 +6,19 @@ import java.util.StringTokenizer;
 
 public class Main_큐빙_5373 {
 
+	static char[] color = {'w','y','g','b','r','o'};
 	static int[][][] cube = new int[6][3][3];
 	static int[][] w = { { 4, 3, 5, 2 }, { 0, 5, 1, 4 }, { 0, 2, 1, 3 } };
 
 	// 0:위(흰) 1:아래(노) 2:왼쪽(초) 3:오른쪽(파) 4:앞(빨) 5:뒤(오)
 	static void spin(int i, int d) {
+		System.out.println("돌리기 전");
+		for (int[] a: cube[i]) {
+			for ( int aa: a) {
+				System.out.print(color[aa]);
+			}
+			System.out.println();
+		}
 		// d = 방향? -> -1 or 1
 		switch (i * d) {
 		case 0:
@@ -220,7 +228,6 @@ public class Main_큐빙_5373 {
 		StringTokenizer st = new StringTokenizer(br.readLine());
 
 		int T = Integer.parseInt(st.nextToken());
-		char[] color = {'w','y','g','b','r','o'};
 		for (int t = 0; t < T; t++) {
 
 			for (int i = 0; i < 6; i++) {
@@ -232,44 +239,50 @@ public class Main_큐빙_5373 {
 			}
 			st = new StringTokenizer(br.readLine());
 			int N = Integer.parseInt(st.nextToken());
-
+			int mm  = 0;
 			st = new StringTokenizer(br.readLine());
+			
 			for (int n = 0; n < N; n++) {
 				String order = st.nextToken();
 				
 				switch (order.charAt(0)) {
 				case 'U':
+					mm = 0;
 					if (order.charAt(1) == '+') {
 						spin(0, 1);
 					} else
 						spin(0, -1);
 					break;
 				case 'D':
+					mm = 1;
 					if (order.charAt(1) == '+') {
 						spin(1, 1);
 					} else
 						spin(1, -1);
 					break;
 				case 'L':
+					mm = 2;
 					if (order.charAt(1) == '+') {
 						spin(2, 1);
 					} else
 						spin(2, -1);
 					break;
 				case 'R':
-
+					mm = 3;
 					if (order.charAt(1) == '+') {
 						spin(3, 1);
 					} else
 						spin(3, -1);
 					break;
 				case 'F':
+					mm = 4;
 					if (order.charAt(1) == '+') {
 						spin(4, 1);
 					} else
 						spin(4, -1);
 					break;
 				case 'B':
+					mm = 5;
 					if (order.charAt(1) == '+') {
 						spin(5, 1);
 					} else
@@ -277,14 +290,14 @@ public class Main_큐빙_5373 {
 					break;
 				}
 				System.out.println(order);
-				
-			}
-			for (int[] a: cube[0]) {
+				for (int[] a: cube[mm]) {
 					for ( int aa: a) {
 						System.out.print(color[aa]);
 					}
 					System.out.println();
 				}
+			}
+			
 			
 			
 		}
@@ -302,5 +315,20 @@ F+ B+
 U- D- L+ R+
 10
 L- U- L+ U- L- U- U- L+ U+ U+
+
+6
+4
+L+ R+ U+ U-
+4
+L+ R+ D+ D-
+4
+U+ D+ L+ L-
+4
+U+ D+ R+ R-
+4
+L+ R+ F+ F-
+4
+L+ R+ B+ B-
+
 
 */
