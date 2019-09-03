@@ -10,7 +10,8 @@ public class Hanoy_11729 {
 	static int count = 0;
 	static int idx;
 	static StringBuilder sw = new StringBuilder();
-
+	
+	
 	static void move(int h, int i) {
 
 		int origin = i;
@@ -41,8 +42,12 @@ public class Hanoy_11729 {
 		int n = Integer.parseInt(br.readLine());
 		//idx = 1;
 		
+		if (n%2==0)idx = 2;
+		else idx = 3;
+		count++;
+		sw.append(1 + " ").append(idx + "\n");
 		
-		for (int h = 1; h <= n; h++) {
+		for (int h = 2; h <= n; h++) {
 			move(h, 1);
 		}
 		System.out.println(count);
