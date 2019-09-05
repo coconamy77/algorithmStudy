@@ -12,45 +12,28 @@ public class Main_15685_드래곤커브 {
 	static int[] dx = { 1, 0, -1, 0 };
 	static int[] dy = { 0, -1, 0, 1 };
 	static List<int[]> dp = new ArrayList<>();
-
 	static void draw(int x, int y, int d, int g) {
 		int[] dir = getDir(g);
-		
 		map[y][x] = true;
 		for (int td: dir) {
-			int nd = td+d;
-			int nx = x+dx[nd];
-			int ny = y+dy[nd];
-			
-			map[ny][nx] = true;
-			
-			System.out.println("x = " + x + ", y = " + y);
-			for (int i = 0; i <= 6; i++) {
-				for (int j = 0; j <= 6; j++) {
-					if (map[i][j])
-						System.out.print(1 + " ");
-					else
-						System.out.print(0 + " ");
-				}
-				System.out.println();
-			}
+			int nd = (td+d)%4;
+			x = x+dx[nd];
+			y = y+dy[nd];
+			map[y][x] = true;
 		}
 	}
 
 	static int[] getDir(int g) {
-		System.out.println(g);
 		if (dp.size()>g) {
 			return dp.get(g);
 		}
-		System.out.println("왜?"+((int) Math.pow(2, g)+1));
-		int[] dir = new int[(int) Math.pow(2, g)+1];
+		int[] dir = new int[(int) Math.pow(2, g)];
 		int[] dirbefore = getDir(g - 1);
-
-		for (int i = 0; i < dirbefore.length; i++) {
+		int len = dirbefore.length;
+		for (int i = 0; i < len; i++) {
 			dir[i] = dirbefore[i];
-			dir[i + dirbefore.length-1] = (dirbefore[dirbefore.length-1-i]+1)%4;
+			dir[i + len] = (dirbefore[len-1-i]+1)%4;
 		}
-		
 		dp.add(dir);
 		return dp.get(g);
 	}
@@ -60,24 +43,22 @@ public class Main_15685_드래곤커브 {
 		StringTokenizer st = new StringTokenizer(br.readLine());
 
 		int N = Integer.parseInt(st.nextToken());
+		dp.add(new int[] { 0 });
 
 		for (int n = 0; n < N; n++) {
 			st = new StringTokenizer(br.readLine());
-			int x = Integer.parseInt(st.nextToken());
-			int y = Integer.parseInt(st.nextToken());
-			int d = Integer.parseInt(st.nextToken());
-			int g = Integer.parseInt(st.nextToken());
-			dp.add(new int[] { 0 });
-			draw(x, y, d, g);
+			draw(Integer.parseInt(st.nextToken()),Integer.parseInt(st.nextToken()),
+					Integer.parseInt(st.nextToken()),Integer.parseInt(st.nextToken()));
 
 		}
-
-		for (int i = 0; i < 6; i++) {
-			System.out.println();
-			for (int j = 0; j < 6; j++) {
-				System.out.print(map[i][j]);
+		int count = 0;
+		for (int i = 0; i<100; i++) {
+			for (int j = 0; j<100;j++) {
+				if(map[i][j] && map[i][j+1] && map[i+1][j] && map[i+1][j+1]) {
+					count++;
+				}
 			}
 		}
-
+		System.out.println(count);
 	}
 }
