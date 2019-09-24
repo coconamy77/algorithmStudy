@@ -41,13 +41,16 @@ public class LinkedList {
 		}
 		
 		else {
-			
-			
-			
-			
+			while(true) {
+				if (tmpNode.link==null){
+					tmpNode.link = new ListNode(data);
+					break;
+				}
+				tmpNode = tmpNode.link;
+			}
 		}
-		
 	}
+	
 	
 	
 }
