@@ -2,6 +2,7 @@ package forB_1768_숫자야구게임;
 
 import java.util.Scanner;
 
+
 class Solution {
     private final static int N              = 4;  
     private final static int MAX_QUERYCOUNT = 1000000;
