@@ -17,6 +17,8 @@ public class Main_17472_다리만들기2 {
 
 	static int[] dx = { 0, 0, 1, -1 };
 	static int[] dy = { 1, -1, 0, 0 };
+	
+	
 
 	static void makeIs(int x, int y, int idx) {
 		map[x][y] = -idx;
@@ -85,6 +87,11 @@ public class Main_17472_다리만들기2 {
 			}
 		}
 		
+		
+		
+		
+		
+		/*
 		for (int[] a: map) {
 			System.out.println(Arrays.toString(a));
 		}
@@ -92,7 +99,7 @@ public class Main_17472_다리만들기2 {
 		System.out.println();
 		for (int[] a: graph) {
 			System.out.println(Arrays.toString(a));
-		}
+		}*/
 
 	}
 }
