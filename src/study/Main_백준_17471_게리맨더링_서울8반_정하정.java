@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 
 import javax.swing.plaf.synth.SynthSeparatorUI;
 
-public class Main_17471_게리맨더링 {
+public class Main_백준_17471_게리맨더링_서울8반_정하정 {
 
 	static int N;
 	static int[] sec;
