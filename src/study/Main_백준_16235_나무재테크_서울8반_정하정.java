@@ -11,7 +11,7 @@ class Land {
 	List<Integer> tree = new ArrayList<>();
 	int nour;
 	int dead;
-	int lbf;
+	int live;
 
 	public Land(int nour) {
 		this.nour = nour + 5;
@@ -41,12 +41,12 @@ class Land {
 		for (int i = dead; i < tree.size();) {
 			nour += tree.remove(i) / 2;
 		}
-		lbf = tree.size();
+		live = tree.size();
 	}
 
 }
 
-public class Main_나무재테크_16235 {
+public class Main_백준_16235_나무재테크_서울8반_정하정 {
 
 	static Land[][] map;
 	static int[] dx = { 0, 1, 1, 1, 0, -1, -1, -1 };
@@ -57,7 +57,7 @@ public class Main_나무재테크_16235 {
 	static List<Integer> land = new ArrayList<>(N*N);
 
 	static void fall(int x, int y) {
-		for (int t = 0; t < map[x][y].lbf; t++) {
+		for (int t = 0; t < map[x][y].live; t++) {
 			if (map[x][y].tree.get(t) % 5 == 0) {
 				for (int d = 0; d < 8; d++) {
 					int nx = x + dx[d];

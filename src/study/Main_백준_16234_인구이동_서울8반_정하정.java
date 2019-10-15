@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Population_16234 {
+public class Main_백준_16234_인구이동_서울8반_정하정 {
 
 	static int[][] map;
 	static boolean[][] vst;
@@ -104,7 +104,6 @@ public class Population_16234 {
 
 				}
 			}
-		
 			if (!chk){
 				break;
 				}

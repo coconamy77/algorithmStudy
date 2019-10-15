@@ -53,10 +53,11 @@ public class BabyShark_16236 {
 				int tmp = q.poll();
 				int px = tmp / 50;
 				int py = tmp % 50;
+				
 				if (tmpd != 0 && tmpd <= vst[px][py]) {
 					break;
 				}
-
+				
 				for (int d = 0; d < 4; d++) {
 					int nx = px + dx[d];
 					int ny = py + dy[d];
@@ -95,6 +96,7 @@ public class BabyShark_16236 {
 				x = gox;
 				y = goy;
 				fish[map[x][y]]--;
+				System.out.println(x + " : " + y + " : " + distance);
 				map[x][y] = 9;
 				edible--;
 				eat++;
