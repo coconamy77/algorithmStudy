@@ -2,6 +2,8 @@ package sw;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.StringTokenizer;
 
 public class Main_백준_14888_연산자끼워넣기_서울8반_정하정 {
@@ -36,8 +38,10 @@ public class Main_백준_14888_연산자끼워넣기_서울8반_정하정 {
 				min = tmpAns;
 			}
 		} else {
+			Set<String> chk = new HashSet<>();
 			for (int i = 0; i < N - 1; i++) {
-				if (!vst[i]) {
+				if (!vst[i] && !chk.contains(oper[i] + "")) {
+					chk.add(oper[i] + "");
 					vst[i] = true;
 					sel[dep] = i;
 					getAns(dep + 1, sel, vst);
