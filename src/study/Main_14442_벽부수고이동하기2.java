@@ -26,18 +26,16 @@ public class Main_14442_벽부수고이동하기2 {
 
 			int[] tmp = q.poll();
 			int count = tmp[3];
-			int wc = tmp[2];
+			if (tmp[0] == N - 1 && tmp[1] == M - 1) {
+				return count;
+			}
+			
 			for (int d = 0; d < 4; d++) {
 				int nx = tmp[0] + dx[d];
 				int ny = tmp[1] + dy[d];
+				int wc = tmp[2];
 
 				if (nx >= 0 && ny >= 0 && nx < N && ny < M) {
-					if (nx == N - 1 && ny == M - 1) {
-						return count;
-					}
-					if (count >= min-1) {
-						continue;
-					}
 					if (map[nx][ny] == 0 && !vst[wc][nx][ny]) {
 						q.add(new int[] { nx, ny, wc, count + 1 });
 						vst[wc][nx][ny] = true;
