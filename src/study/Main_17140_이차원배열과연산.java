@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.StringTokenizer;
 
-public class 이차원배열과연산_17140 {
+public class Main_17140_이차원배열과연산 {
 	public static void main(String[] args) throws Exception {
 
 		int[][
