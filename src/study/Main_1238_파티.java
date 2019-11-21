@@ -39,35 +39,33 @@ public class Main_1238_파티 {
 
 			@Override
 			public int compare(Integer o1, Integer o2) {
-				
-				return Integer.compare(o1%1000, o2%1000);
+
+				return Integer.compare(o1 % 1000, o2 % 1000);
 			}
 
-			
 		});
 
-		q.add(X*1000);
+		q.add(X * 1000);
 
 		while (!q.isEmpty()) {
-			int tmp = q.poll()/1000;
-			
-			
+			int tmp = q.poll() / 1000;
+
 			for (int i = 0; i < N; i++) {
 				if (map[i][tmp] > 0) {
 					if (dijk[i][0] > dijk[tmp][0] + map[i][tmp]) {
 
 						dijk[i][0] = dijk[tmp][0] + map[i][tmp];
 
-						q.add(i*1000+map[i][tmp]);
+						q.add(i * 1000 + map[i][tmp]);
 					}
 				}
 			}
 		}
 
-		q.add(X*1000);
+		q.add(X * 1000);
 
 		while (!q.isEmpty()) {
-			int tmp = q.poll()/1000;
+			int tmp = q.poll() / 1000;
 
 			for (int i = 0; i < N; i++) {
 				if (map[tmp][i] > 0) {
@@ -75,14 +73,13 @@ public class Main_1238_파티 {
 
 						dijk[i][1] = dijk[tmp][1] + map[tmp][i];
 
-						q.add(i*1000+map[tmp][i]);
+						q.add(i * 1000 + map[tmp][i]);
 					}
 				}
 			}
-			
+
 		}
 
-		
 		int ans = 0;
 
 		for (int i = 0; i < N; i++) {
@@ -98,10 +95,6 @@ public class Main_1238_파티 {
 				ans = i;
 			}
 		}
-		/*
-		 * for (int d[] : dijk) { System.out.println(d[0] + " " + d[1]); }
-		 */
-		// System.out.println(ans);
 		System.out.println(dijk[ans][0] + dijk[ans][1]);
 
 	}
