@@ -8,7 +8,7 @@ class Road{
 	int next;
 	int val;
 	int id;
-	
+	  
 	public Road(int id, int next, int val) {
 		this.id = id;
 		this.next = next;
