@@ -14,7 +14,7 @@ class Road{
 		this.next = next;
 		this.val = val;
 	}
-}
+}   
 
 public class Solution_4006_고속도로건설2 {
 	
