@@ -28,7 +28,7 @@ public class Solution_4007_간담회참석 {
 						.parseInt(st.nextToken());
 
 			}
-
+fdjdkl;
 			int[][] dijk = new int[N][2];
 
 			for (int i = 0; i < N; i++) {
