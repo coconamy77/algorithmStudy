@@ -1,101 +1,84 @@
-import java.util.Scanner;
- 
- 
-class Hashtable
-{
-    class Hash {
-        String key;
-        String data;
-    }
- 
-    int capacity;
-    Hash tb[];
-     
-    public Hashtable(int capacity){
-        this.capacity = capacity;
-        tb = new Hash[capacity];
-        for (int i = 0; i < capacity; i++){
-            tb[i] = new Hash();
-        }
-    }
-     
-    private int hash(String str)
-    {
-        int hash = 5381;
-         
-        for (int i = 0; i < str.length(); i++)
-        {
-            int c = (int)str.charAt(i);
-            hash = ((hash << 5) + hash) + c;
-        }
-        if (hash < 0) hash *= -1;
-        return hash % capacity;
-    }
-     
-    public String find(String key){
-        int h = hash(key);
-        int cnt = capacity;
-        while(tb[h].key != null && (--cnt) != 0)
-        {
-            if (tb[h].key.equals(key)){
-                return tb[h].data;
-            }
-            h = (h + 1) % capacity;
-        }
-        return null;
-    }
-     
-    boolean add(String key, String data)
-    {
-        int h = hash(key);
-        while(tb[h].key != null)
-        {
-            if (tb[h].key.equals(key)){
-                return false;
-            }
-            h = (h + 1) % capacity;
-        }
-        tb[h].key = key;
-        tb[h].data = data;
-        return true;
-    }
-}
-     
- 
-public class Solution
-{
-    final static int MAX_TABLE = 4096;
-     
-    public static void main(String args[]) throws Exception
-    {
-        Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt();
-        for (int test_case = 1; test_case <= T; test_case++)
-        {
-            Hashtable tb = new Hashtable(MAX_TABLE);
-            int N = sc.nextInt();
-            for (int i = 0; i < N; i++)
-            {
-                String k = sc.next();
-                String d = sc.next();
-                tb.add(k, d);
-            }
-            System.out.printf("#%d\n", test_case);
-            int Q = sc.nextInt();
-            for (int i = 0; i < Q; i++)
-            {
-                String k = sc.next();
-                String d = tb.find(k);
-                if (d != null)
-                {
-                    System.out.printf("%s\n", d);
-                }
-                else
-                {
-                    System.out.printf("not find\n");
-                }
-            }
-        }
-        sc.close();
-    }
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+class Solution {
+	public static void main(String args[]) throws Exception {
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		int T = Integer.parseInt(br.readLine());
+		for (int test_case = 1; test_case <= T; test_case++) {
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			String n = st.nextToken();
+			int x = Integer.parseInt(st.nextToken());
+			int y = Integer.parseInt(st.nextToken());
+			boolean d = false;
+
+			String ans = "";
+
+			for (int i = 0; i < n.length(); i++) {
+
+				int digit = n.charAt(i) - '0';
+				if (!d) {
+					if (i == 0) {
+						if (n.length() == 1) {
+							if (digit < x) {
+								ans = "-1";
+								break;
+							}
+							if (x == 0 && digit < y) {
+								ans = "-1";
+								break;
+							}
+						}
+						if (digit < x) {
+							d = true;
+							continue;
+						}
+						if (x == 0 && digit < y) {
+							d = true;
+							continue;
+						}
+					}
+					if (digit < x) {
+						ans = "";
+						// System.out.println("여기를 안온다고?"+i);
+						if (i == 1) {
+							ans+=x;
+							
+						}else if(i==n.length()-1) {
+							ans = "-1";
+							break;
+						}
+						else {
+							for (int j = 0; j < i; j++) {
+								ans += y;
+							}
+						}
+						d = true;
+						continue;
+					}
+					if (digit > y) {
+						ans += y;
+						d = true;
+					} else if (digit == y) {
+						ans += y;
+					} else if (digit == x) {
+						ans += x;
+					} else {
+						ans += x;
+						d = true;
+					}
+
+				} else {
+					ans += y;
+				}
+			}
+			System.out.println("#" + test_case + " " + ans);
+		}
+
+		br.close(); // 사용이 끝난 스캐너 객체를 닫습니다.
+	}
 }
