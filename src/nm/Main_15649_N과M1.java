@@ -1,5 +1,5 @@
 package nm;
-//으아아아아아 왜 안돼
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
