@@ -7,7 +7,7 @@ import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 public class Main_15649_N과M1 {
-//잔디를 심어요~
+//잔디를 드디어?!
 	static int N;
 	static int M;
 	static int[] ans;
