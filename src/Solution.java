@@ -1,6 +1,6 @@
 import java.util.Scanner;
  
- 
+ //jhgjggjhgjhj
 class Hashtable
 {
     class Hash {
