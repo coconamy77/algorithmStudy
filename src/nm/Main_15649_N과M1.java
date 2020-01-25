@@ -7,7 +7,7 @@ import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 public class Main_15649_N과M1 {
-
+//기연이 최고!
 	static int N;
 	static int M;
 	static int[] ans;

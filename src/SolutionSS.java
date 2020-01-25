@@ -1,7 +1,7 @@
 import java.util.Scanner;
- //sssss
- //jhgjggjhgjhj
-class Hashtable
+ 
+ 
+/*class Hashtable
 {
     class Hash {
         String key;
@@ -58,5 +58,44 @@ class Hashtable
         tb[h].key = key;
         tb[h].data = data;
         return true;
+    }
+}
+     
+ */
+public class SolutionSS
+{
+    final static int MAX_TABLE = 4096;
+     
+    public static void main(String args[]) throws Exception
+    {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        for (int test_case = 1; test_case <= T; test_case++)
+        {
+            Hashtable tb = new Hashtable(MAX_TABLE);
+            int N = sc.nextInt();
+            for (int i = 0; i < N; i++)
+            {
+                String k = sc.next();
+                String d = sc.next();
+                tb.add(k, d);
+            }
+            System.out.printf("#%d\n", test_case);
+            int Q = sc.nextInt();
+            for (int i = 0; i < Q; i++)
+            {
+                String k = sc.next();
+                String d = tb.find(k);
+                if (d != null)
+                {
+                    System.out.printf("%s\n", d);
+                }
+                else
+                {
+                    System.out.printf("not find\n");
+                }
+            }
+        }
+        sc.close();
     }
 }
