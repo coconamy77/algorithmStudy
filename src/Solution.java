@@ -1,62 +1,32 @@
-import java.util.Scanner;
- //sssss
- //jhgjggjhgjhj
-class Hashtable
-{
-    class Hash {
-        String key;
-        String data;
-    }
- 
-    int capacity;
-    Hash tb[];
-     
-    public Hashtable(int capacity){
-        this.capacity = capacity;
-        tb = new Hash[capacity];
-        for (int i = 0; i < capacity; i++){
-            tb[i] = new Hash();
-        }
-    }
-     
-    private int hash(String str)
-    {
-        int hash = 5381;
-         
-        for (int i = 0; i < str.length(); i++)
-        {
-            int c = (int)str.charAt(i);
-            hash = ((hash << 5) + hash) + c;
-        }
-        if (hash < 0) hash *= -1;
-        return hash % capacity;
-    }
-     
-    public String find(String key){
-        int h = hash(key);
-        int cnt = capacity;
-        while(tb[h].key != null && (--cnt) != 0)
-        {
-            if (tb[h].key.equals(key)){
-                return tb[h].data;
-            }
-            h = (h + 1) % capacity;
-        }
-        return null;
-    }
-     
-    boolean add(String key, String data)
-    {
-        int h = hash(key);
-        while(tb[h].key != null)
-        {
-            if (tb[h].key.equals(key)){
-                return false;
-            }
-            h = (h + 1) % capacity;
-        }
-        tb[h].key = key;
-        tb[h].data = data;
-        return true;
+// you can also use imports, for example:
+// import java.util.*;
+
+// you can write to stdout for debugging purposes, e.g.
+// System.out.println("this is a debug message");
+
+class Solution {
+	
+	
+    public int solution(String[] A) {
+    	int[] alpha = new int[26+1];
+    	boolean[] ans = new boolean[A.length];
+    	
+    	for (int i = 0; i<A.length;i++) {
+    		for (char c: A[i].toCharArray()) {
+    			if (alpha[c-'a']>0) {
+    				if (A[alpha[c-'a']].length()<=A[i].length()) {
+    					ans[alpha[c-'a']] = false;
+    					ans[i] = true;
+    					alpha[c-'a'] = i+1;
+    				}
+    			}
+    		}
+    		
+    		
+    	}
+    	
+    	
+    	
+		return 0;
     }
 }
