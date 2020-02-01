@@ -24,7 +24,7 @@ public class Solution_풍선터트리기 {
 				max = true;
 			}
 			while (max) {
-				System.out.println(num+"삭제");
+				//System.out.println(num+"삭제");
 				if (stack.size() == 1) {
 					max = false;
 					num = stack.pop();
