@@ -9,10 +9,12 @@ public class Main_12100_2048Easy {
 	static int[][] game;
 	static int max = 0;
 	static int N;
+	static int[] dx = {-1,0,1,0};
+	static int[] dy = {0,1,0,-1};
 	
 	static void select(int dep, int[] sel) {
 		if (dep==5) {
-			getMin(sel);
+			getMax(sel);
 		}
 		else {
 			for (int i = 0; i<4;i++) {
@@ -23,27 +25,29 @@ public class Main_12100_2048Easy {
 		
 	}
 	
-	static void getMin(int[] sel) {
+	static void getMax(int[] sel) {
 		int[][] tmp = new int[N][N];
 		for (int i = 0; i<N; i++) {
 			for (int j = 0; j<N; j++) {
 				tmp[i][j] = game[i][j];
 			}
 		}
+		int d = 0;
+		int nx, ny;
 		for (int s = 0; s<5; s++) {
-			switch(sel[s]) {
-			case 0:
-				
-			
-			
-			
-			
-			
-			
-			}
-			
-			
-			
+			d = sel[s];
+				for (int i = 0; i<N-1; i++) {
+					for (int j = 0; j<N; j++) {
+						nx = i+dx[d];
+						ny = j+dy[d];
+						
+						
+						
+					}
+					
+					
+				}
+
 			
 			
 			
