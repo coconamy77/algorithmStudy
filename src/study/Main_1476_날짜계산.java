@@ -1,10 +1,10 @@
-package algorithm;
+package study;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_1476_³¯Â¥°è»ê {
+public class Main_1476_ë‚ ì§œê³„ì‚° {
 	static int E = 15, S = 28, M = 19;
 	
 	public static void main(String[] args) throws Exception{
@@ -15,19 +15,22 @@ public class Main_1476_³¯Â¥°è»ê {
 		int s = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
 		
-		int i = 0;
+		e = e==E? 0:e;
+		s = s==S? 0:s;
+		m = m==M? 0:m;
+		
 		
 		int tmp = s;
-		
+		int i = 1;
 		while(true) {
-			if (tmp%E==e && tmp%M==m) {
+			if (i%E==e && i%M==m && i%S==s) {
 				break;
 			}
-			tmp +=S;
-			//i++;
+			//tmp +=S;
+			i++;
 			//System.out.println(tmp);
 		}
-		System.out.println(tmp);
+		System.out.println(i);
 		
 	}
 }
