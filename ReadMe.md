@@ -23,7 +23,7 @@ JAVA Algorithm solution
 ## 브루트 포스
 
 - [ ] [일곱 난쟁이](https://www.acmicpc.net/problem/2309)
-- [ ] [날짜 계산](https://www.acmicpc.net/problem/1476)
+- [x] [날짜 계산](https://www.acmicpc.net/problem/1476)
 - [ ] [테트로미노](https://www.acmicpc.net/problem/14500)
 - [ ] [1, 2, 3 더하기](https://www.acmicpc.net/problem/9095)
 - [ ] [다음 순열](https://www.acmicpc.net/problem/10972)
@@ -180,7 +180,7 @@ JAVA Algorithm solution
 - [ ] [테트리스](https://www.acmicpc.net/problem/3019)
 - [ ] [삼각형의 값](https://www.acmicpc.net/problem/4902)
 - [ ] [자와 각도기](https://www.acmicpc.net/problem/2916)
-- [ ] [한윤정이 이탈리아에 가서 아이스크림을 사먹는데](https://www.acmicpc.net/problem/2422)
+- [x] [한윤정이 이탈리아에 가서 아이스크림을 사먹는데](https://www.acmicpc.net/problem/2422)
 - [ ] [부분수열의 합](https://www.acmicpc.net/problem/14225)
 - [ ] [두 동전](https://www.acmicpc.net/problem/16197)
 - [ ] [에너지 모으기](https://www.acmicpc.net/problem/16198)
