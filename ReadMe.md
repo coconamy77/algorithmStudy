@@ -56,20 +56,20 @@ JAVA Algorithm solution
 
 ## 그래프와 BFS
 
-- [ ] [ABCDE](https://www.acmicpc.net/problem/13023)
-- [ ] [DFS와 BFS](https://www.acmicpc.net/problem/1260)
+- [ ] [ABCDE](https://www.acmicpc.net/problem/13023)   -> ing
+- [x] [DFS와 BFS](https://www.acmicpc.net/problem/1260)
 - [ ] [연결 요소](https://www.acmicpc.net/problem/11724)
 - [ ] [이분 그래프](https://www.acmicpc.net/problem/1707)
 - [x] [단지번호붙이기](https://www.acmicpc.net/problem/2667)
 - [ ] [섬의 개수](https://www.acmicpc.net/problem/4963)
-- [ ] [미로 탐색](https://www.acmicpc.net/problem/2178)
+- [x] [미로 탐색](https://www.acmicpc.net/problem/2178)
 - [x] [토마토](https://www.acmicpc.net/problem/7576)
 - [ ] [숨바꼭질](https://www.acmicpc.net/problem/1697)
 - [ ] [이모티콘](https://www.acmicpc.net/problem/14226)
 - [ ] [숨바꼭질 3](https://www.acmicpc.net/problem/13549)
 - [ ] [알고스팟](https://www.acmicpc.net/problem/1261)
 - [ ] [벽 부수고 이동하기](https://www.acmicpc.net/problem/2206)
-- [ ] [탈출](https://www.acmicpc.net/problem/3055)
+- [x] [탈출](https://www.acmicpc.net/problem/3055)
 
 ## 다이나믹 프로그래밍
 
