@@ -64,7 +64,7 @@ JAVA Algorithm solution
 - [ ] [섬의 개수](https://www.acmicpc.net/problem/4963)
 - [x] [미로 탐색](https://www.acmicpc.net/problem/2178)
 - [x] [토마토](https://www.acmicpc.net/problem/7576)
-- [ ] [숨바꼭질](https://www.acmicpc.net/problem/1697)
+- [x] [숨바꼭질](https://www.acmicpc.net/problem/1697)
 - [ ] [이모티콘](https://www.acmicpc.net/problem/14226)
 - [ ] [숨바꼭질 3](https://www.acmicpc.net/problem/13549)
 - [ ] [알고스팟](https://www.acmicpc.net/problem/1261)
@@ -73,8 +73,8 @@ JAVA Algorithm solution
 
 ## 다이나믹 프로그래밍
 
-- [ ] [1로 만들기](https://www.acmicpc.net/problem/1463)
-- [ ] [2×n 타일링](https://www.acmicpc.net/problem/11726)
+- [x] [1로 만들기](https://www.acmicpc.net/problem/1463)
+- [x] [2×n 타일링](https://www.acmicpc.net/problem/11726)
 - [ ] [2×n 타일링 2](https://www.acmicpc.net/problem/11727)
 - [ ] [1, 2, 3 더하기](https://www.acmicpc.net/problem/9095)
 - [ ] [1, 2, 3 더하기 3](https://www.acmicpc.net/problem/15988)
