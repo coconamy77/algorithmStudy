@@ -22,9 +22,9 @@ JAVA Algorithm solution
 
 ## 브루트 포스
 
-- [ ] [일곱 난쟁이](https://www.acmicpc.net/problem/2309)
+- [ ] [일곱 난쟁이](https://www.acmicpc.net/problem/2309) ->ing
 - [x] [날짜 계산](https://www.acmicpc.net/problem/1476)
-- [ ] [테트로미노](https://www.acmicpc.net/problem/14500)
+- [ ] [테트로미노](https://www.acmicpc.net/problem/14500) ->ing
 - [ ] [1, 2, 3 더하기](https://www.acmicpc.net/problem/9095)
 - [ ] [다음 순열](https://www.acmicpc.net/problem/10972)
 - [ ] [이전 순열](https://www.acmicpc.net/problem/10973)
@@ -107,7 +107,7 @@ JAVA Algorithm solution
 - [ ] [수 이어 쓰기 1](https://www.acmicpc.net/problem/1748)
 - [ ] [부등호](https://www.acmicpc.net/problem/2529)
 - [ ] [단어 수학](https://www.acmicpc.net/problem/1339)
-- [ ] [스타트와 링크](https://www.acmicpc.net/problem/14889)
+- [x] [스타트와 링크](https://www.acmicpc.net/problem/14889)
 - [ ] [맞춰봐](https://www.acmicpc.net/problem/1248)
 - [ ] [N-Queen](https://www.acmicpc.net/problem/9663)
 - [ ] [스도쿠](https://www.acmicpc.net/problem/2580)
