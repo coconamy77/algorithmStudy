@@ -35,7 +35,7 @@ JAVA Algorithm solution
 - [ ] [연산자 끼워넣기](https://www.acmicpc.net/problem/14888)
 - [ ] [암호 만들기](https://www.acmicpc.net/problem/1759)
 - [ ] [부분집합의 합](https://www.acmicpc.net/problem/1182)
-- [ ] [퇴사](https://www.acmicpc.net/problem/14501)
+- [x] [퇴사](https://www.acmicpc.net/problem/14501)
 - [ ] [연산자 끼워넣기 (2)](https://www.acmicpc.net/problem/15658)
 - [ ] [집합](https://www.acmicpc.net/problem/11723)
 
