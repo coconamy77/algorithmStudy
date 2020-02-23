@@ -22,9 +22,9 @@ JAVA Algorithm solution
 
 ## 브루트 포스
 
-- [ ] [일곱 난쟁이](https://www.acmicpc.net/problem/2309)
+- [ ] [일곱 난쟁이](https://www.acmicpc.net/problem/2309) ->ing
 - [x] [날짜 계산](https://www.acmicpc.net/problem/1476)
-- [ ] [테트로미노](https://www.acmicpc.net/problem/14500)
+- [ ] [테트로미노](https://www.acmicpc.net/problem/14500) ->ing
 - [ ] [1, 2, 3 더하기](https://www.acmicpc.net/problem/9095)
 - [ ] [다음 순열](https://www.acmicpc.net/problem/10972)
 - [ ] [이전 순열](https://www.acmicpc.net/problem/10973)
@@ -35,7 +35,7 @@ JAVA Algorithm solution
 - [ ] [연산자 끼워넣기](https://www.acmicpc.net/problem/14888)
 - [ ] [암호 만들기](https://www.acmicpc.net/problem/1759)
 - [ ] [부분집합의 합](https://www.acmicpc.net/problem/1182)
-- [ ] [퇴사](https://www.acmicpc.net/problem/14501)
+- [x] [퇴사](https://www.acmicpc.net/problem/14501)
 - [ ] [연산자 끼워넣기 (2)](https://www.acmicpc.net/problem/15658)
 - [ ] [집합](https://www.acmicpc.net/problem/11723)
 
@@ -61,7 +61,7 @@ JAVA Algorithm solution
 - [ ] [연결 요소](https://www.acmicpc.net/problem/11724)
 - [ ] [이분 그래프](https://www.acmicpc.net/problem/1707)
 - [x] [단지번호붙이기](https://www.acmicpc.net/problem/2667)
-- [ ] [섬의 개수](https://www.acmicpc.net/problem/4963)
+- [x] [섬의 개수](https://www.acmicpc.net/problem/4963)
 - [x] [미로 탐색](https://www.acmicpc.net/problem/2178)
 - [x] [토마토](https://www.acmicpc.net/problem/7576)
 - [x] [숨바꼭질](https://www.acmicpc.net/problem/1697)
@@ -81,7 +81,7 @@ JAVA Algorithm solution
 - [ ] [카드 구매하기](https://www.acmicpc.net/problem/11052)
 - [ ] [카드 구매하기 2](https://www.acmicpc.net/problem/16194)
 - [ ] [1, 2, 3 더하기 5](https://www.acmicpc.net/problem/15990)
-- [ ] [쉬운 계단 수](https://www.acmicpc.net/problem/10844)
+- [x] [쉬운 계단 수](https://www.acmicpc.net/problem/10844)
 - [ ] [오르막 수](https://www.acmicpc.net/problem/11057)
 - [ ] [이친수](https://www.acmicpc.net/problem/2193)
 - [x] [스티커](https://www.acmicpc.net/problem/9465)
@@ -107,7 +107,7 @@ JAVA Algorithm solution
 - [ ] [수 이어 쓰기 1](https://www.acmicpc.net/problem/1748)
 - [ ] [부등호](https://www.acmicpc.net/problem/2529)
 - [ ] [단어 수학](https://www.acmicpc.net/problem/1339)
-- [ ] [스타트와 링크](https://www.acmicpc.net/problem/14889)
+- [x] [스타트와 링크](https://www.acmicpc.net/problem/14889)
 - [ ] [맞춰봐](https://www.acmicpc.net/problem/1248)
 - [ ] [N-Queen](https://www.acmicpc.net/problem/9663)
 - [ ] [스도쿠](https://www.acmicpc.net/problem/2580)
@@ -160,9 +160,9 @@ JAVA Algorithm solution
 - [ ] [주사위 굴리기](https://www.acmicpc.net/problem/14499)
 - [ ] [톱니바퀴](https://www.acmicpc.net/problem/14891)
 - [ ] [톱니바퀴 (2)](https://www.acmicpc.net/problem/15662)
-- [ ] [로봇 청소기](https://www.acmicpc.net/problem/14503)
+- [x] [로봇 청소기](https://www.acmicpc.net/problem/14503)
 - [ ] [경사로](https://www.acmicpc.net/problem/14890)
-- [ ] [뱀](https://www.acmicpc.net/problem/3190)
+- [x] [뱀](https://www.acmicpc.net/problem/3190)
 - [ ] [드래곤 커브](https://www.acmicpc.net/problem/15685)
 - [ ] [미네랄](https://www.acmicpc.net/problem/2933)
 - [ ] [iSharp](https://www.acmicpc.net/problem/3568)
@@ -228,7 +228,7 @@ JAVA Algorithm solution
 
 ## 추가 문제
 
-- [ ] [NxM 보드 완주하기](https://www.acmicpc.net/problem/9944)
+- [] [NxM 보드 완주하기](https://www.acmicpc.net/problem/9944)
 - [ ] [수족관 1](https://www.acmicpc.net/problem/8982)
 - [ ] [스도미노쿠](https://www.acmicpc.net/problem/4574)
 - [ ] [욕심쟁이 판다](https://www.acmicpc.net/problem/1937)
