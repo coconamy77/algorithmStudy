@@ -4,58 +4,67 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-class Node{
+class Node {
 	int i;
 	Node next;
+	Node last;
+	
 	public Node(int i, Node next) {
 		this.i = i;
 		this.next = next;
+		this.last = next;
 	}
-	public Node(int i ) {
+
+	public Node(int i) {
 		this.i = i;
+		this.next = null;
+	}
+
+	public void add(int i) {
+//		Node tNode = this;
+//		while (tNode.next != null) {
+//			tNode = tNode.next;
+//		}
+//		tNode.next = new Node(i);
+		
+		if (this.next==null) {
+			this.next = new Node(i);
+			this.last = this.next;
+		}else {
+			this.last.next = new Node(i);
+			this.last = this.last.next;
+			
+		}
+		
 	}
 }
 
 public class Main_1701_이분그래프 {
 	static int V, E;
 	static Node[] graph;
+	static int[] team;
 	static boolean fin;
 
-	static boolean getAns(int dep, int[] sel) {
-		if (fin) {
-			return fin;
+	static void getAns(int i, int t) {
+		//System.out.println("i = " + i + " t = " + t);
+		if (!fin) {
+			return;
 		}
-		if (dep == V + 1) {
-			for (int i = 1; i <= V; i++) {
-				if (graph[i]!=null && !check(i, sel, sel[i])) {
-					return false;
-				}
+		if (team[i] == t) {
+			return;
+		} else if (team[i] == 0) {
+			team[i] = t;
+			Node tNode = graph[i].next;
+			while (tNode != null && fin) {
+				getAns(tNode.i, ((t + 2) % 2) + 1);
+				tNode = tNode.next;
 			}
-			fin = true;
-			return fin;
+
+		} else {
+			fin = false;
+			return;
 		}
 
-		sel[dep] = 1;
-		getAns(dep + 1, sel);
-
-		if (fin)
-			return fin;
-		sel[dep] = 0;
-		getAns(dep + 1, sel);
-
-		return fin;
-	}
-
-	static boolean check(int i, int[] sel, int val) {
-		Node tNode = graph[i].next;
-		while(tNode!=null) {
-			if (sel[tNode.i]==val) {
-				return false;
-			}
-			
-			tNode = tNode.next;
-		}
-		return true;
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -67,12 +76,13 @@ public class Main_1701_이분그래프 {
 		int x, y;
 
 		for (int t = 1; t <= T; t++) {
-			fin = false;
+			fin = true;
 			st = new StringTokenizer(br.readLine());
 			V = Integer.parseInt(st.nextToken());
 			E = Integer.parseInt(st.nextToken());
 
-			graph = new Node[V+1];
+			graph = new Node[V + 1];
+			team = new int[V + 1];
 
 			for (int e = 0; e < E; e++) {
 				st = new StringTokenizer(br.readLine());
@@ -80,23 +90,38 @@ public class Main_1701_이분그래프 {
 				x = Integer.parseInt(st.nextToken());
 				y = Integer.parseInt(st.nextToken());
 
-				if (graph[x]==null) {
-					
-					graph[x] = new Node(x,new Node(y));
-				}else {
-					Node tNode = graph[x];
-					while(tNode.next!=null) {
-						tNode = tNode.next;
-					}
-					tNode.next = new Node(y);
+				if (graph[x] == null) {
+					graph[x] = new Node(x, new Node(y));
+				} else {
+					graph[x].add(y);
+				}
+				if (graph[y] == null) {
+					graph[y] = new Node(y, new Node(x));
+				} else {
+					graph[y].add(x);
 				}
 
 			}
-			
-			int[] sel = new int[V+1];
-			
-			if (getAns(1, sel)) {
+
+//			for (int i = 1; i <= 3; i++) {
+//				System.out.println(i);
+//				Node tn = graph[i].next;
+//				while (tn != null) {
+//					System.out.println("->" + tn.i);
+//					tn = tn.next;
+//				}
+//				// System.out.println("->"+tn.i);
+//			}
+
+			for (int i = 1; i <= V; i++) {
+				if (graph[i] != null && team[i] == 0 && fin) {
+					getAns(i, 1);
+				}
+			}
+
+			if (fin) {
 				System.out.println("YES");
+
 			} else {
 				System.out.println("NO");
 			}
