@@ -49,7 +49,7 @@ JAVA Algorithm solution
 - [x] [N과 M(6)](https://www.acmicpc.net/problem/15655)
 - [x] [N과 M(7)](https://www.acmicpc.net/problem/15656)
 - [x] [N과 M(8)](https://www.acmicpc.net/problem/15657)
-- [ ] [N과 M(9)](https://www.acmicpc.net/problem/15663)
+- [x] [N과 M(9)](https://www.acmicpc.net/problem/15663)
 - [ ] [N과 M(10)](https://www.acmicpc.net/problem/15664)
 - [ ] [N과 M(11)](https://www.acmicpc.net/problem/15665)
 - [ ] [N과 M(12)](https://www.acmicpc.net/problem/15666)
