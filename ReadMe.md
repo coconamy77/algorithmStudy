@@ -59,7 +59,7 @@ JAVA Algorithm solution
 - [ ] [ABCDE](https://www.acmicpc.net/problem/13023)   -> ing
 - [x] [DFS와 BFS](https://www.acmicpc.net/problem/1260)
 - [ ] [연결 요소](https://www.acmicpc.net/problem/11724)
-- [ ] [이분 그래프](https://www.acmicpc.net/problem/1707)
+- [x] [이분 그래프](https://www.acmicpc.net/problem/1707)
 - [x] [단지번호붙이기](https://www.acmicpc.net/problem/2667)
 - [x] [섬의 개수](https://www.acmicpc.net/problem/4963)
 - [x] [미로 탐색](https://www.acmicpc.net/problem/2178)
