@@ -22,7 +22,7 @@ JAVA Algorithm solution
 
 ## 브루트 포스
 
-- [ ] [일곱 난쟁이](https://www.acmicpc.net/problem/2309) ->ing
+- [x] [일곱 난쟁이](https://www.acmicpc.net/problem/2309) ->ing
 - [x] [날짜 계산](https://www.acmicpc.net/problem/1476)
 - [ ] [테트로미노](https://www.acmicpc.net/problem/14500) ->ing
 - [ ] [1, 2, 3 더하기](https://www.acmicpc.net/problem/9095)
@@ -49,7 +49,7 @@ JAVA Algorithm solution
 - [x] [N과 M(6)](https://www.acmicpc.net/problem/15655)
 - [x] [N과 M(7)](https://www.acmicpc.net/problem/15656)
 - [x] [N과 M(8)](https://www.acmicpc.net/problem/15657)
-- [ ] [N과 M(9)](https://www.acmicpc.net/problem/15663)
+- [x] [N과 M(9)](https://www.acmicpc.net/problem/15663)
 - [ ] [N과 M(10)](https://www.acmicpc.net/problem/15664)
 - [ ] [N과 M(11)](https://www.acmicpc.net/problem/15665)
 - [ ] [N과 M(12)](https://www.acmicpc.net/problem/15666)
@@ -59,7 +59,7 @@ JAVA Algorithm solution
 - [ ] [ABCDE](https://www.acmicpc.net/problem/13023)   -> ing
 - [x] [DFS와 BFS](https://www.acmicpc.net/problem/1260)
 - [ ] [연결 요소](https://www.acmicpc.net/problem/11724)
-- [ ] [이분 그래프](https://www.acmicpc.net/problem/1707)
+- [x] [이분 그래프](https://www.acmicpc.net/problem/1707)
 - [x] [단지번호붙이기](https://www.acmicpc.net/problem/2667)
 - [x] [섬의 개수](https://www.acmicpc.net/problem/4963)
 - [x] [미로 탐색](https://www.acmicpc.net/problem/2178)
@@ -85,8 +85,8 @@ JAVA Algorithm solution
 - [ ] [오르막 수](https://www.acmicpc.net/problem/11057)
 - [ ] [이친수](https://www.acmicpc.net/problem/2193)
 - [x] [스티커](https://www.acmicpc.net/problem/9465)
-- [ ] [포도주 시식](https://www.acmicpc.net/problem/2156)
-- [ ] [가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/11053)
+- [x] [포도주 시식](https://www.acmicpc.net/problem/2156)
+- [x] [가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/11053)
 - [ ] [가장 긴 증가하는 부분 수열 4](https://www.acmicpc.net/problem/14002)
 - [ ] [가장 큰 증가하는 부분 수열](https://www.acmicpc.net/problem/11055)
 - [ ] [가장 긴 감소하는 부분 수열](https://www.acmicpc.net/problem/11722)
