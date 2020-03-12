@@ -13,13 +13,6 @@ class Tree{
 		children = new ArrayList<Integer>();	
 	}
 	
-	public void add(int i) {
-		children.add(i);
-	}
-	
-	public int size() {
-		return children.size();
-	}
 }
 
 public class Solution_4534_트리흑백색칠 {
@@ -49,9 +42,10 @@ public class Solution_4534_트리흑백색칠 {
 				if (tree[x]==null) {
 					tree[x] = new Tree(x);
 				}
-				tree[x].add(y);
+				tree[x].children.add(y);
 			}
 		}
+		
 		
 		
 		
