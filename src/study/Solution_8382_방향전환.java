@@ -1,8 +1,9 @@
+package study;
+
 import java.io.*;
 import java.util.*;
 
 public class Solution_8382_방향전환{
-	
 	static int[] dx = {0,0,1,-1};
 	static int[] dy = {1,-1,0,0};
 	static int T,x1,x2,y1,y2;
@@ -38,21 +39,16 @@ public class Solution_8382_방향전환{
 				ans = 0;
 				break;
 			}
-		
 			nx = x1+dx[d];
 			ny = y1+dy[d];
-			
 			if (nx>=0 && nx<=200 && ny>=0 && ny<=200){
 				if (nx==x2 && ny==y2){
 					ans = 1;
 					break;
 				}
 				vst[nx][ny] = true;
-				
 				q.add(new int[]{nx,ny,d,1});
-				
 			}
-			
 		}
 		System.out.println(q.size());
 		
@@ -76,11 +72,9 @@ public class Solution_8382_방향전환{
 					vst[nx][ny] = true;	
 				}
 			}
-			
 		}
-		
 		System.out.println("#"+t+" "+ans);
-		}
+	}
    }
 }
 

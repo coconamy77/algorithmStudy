@@ -12,7 +12,6 @@ class Tree{
 	public Tree(int name) {
 		children = new ArrayList<Integer>();	
 	}
-	
 }
 
 public class Solution_4534_트리흑백색칠 {
@@ -35,10 +34,8 @@ public class Solution_4534_트리흑백색칠 {
 			int x, y;
 			for (int n = 1; n<N;n++) {
 				st = new StringTokenizer(br.readLine());
-				
 				x = Integer.parseInt(st.nextToken());
 				y = Integer.parseInt(st.nextToken());
-				
 				if (tree[x]==null) {
 					tree[x] = new Tree(x);
 				}
