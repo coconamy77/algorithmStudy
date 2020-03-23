@@ -26,7 +26,7 @@ JAVA Algorithm solution
 - [x] [날짜 계산](https://www.acmicpc.net/problem/1476)
 - [ ] [테트로미노](https://www.acmicpc.net/problem/14500) ->ing
 - [x] [1, 2, 3 더하기](https://www.acmicpc.net/problem/9095)
-- [ ] [다음 순열](https://www.acmicpc.net/problem/10972)
+- [ ] [다음 순열](https://www.acmicpc.net/problem/10972) ->ing
 - [ ] [이전 순열](https://www.acmicpc.net/problem/10973)
 - [ ] [모든 순열](https://www.acmicpc.net/problem/10974)
 - [ ] [차이를 최대로](https://www.acmicpc.net/problem/10819)
