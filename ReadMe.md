@@ -302,3 +302,24 @@ JAVA Algorithm solution
 - [ ] [배열 B의 값](https://www.acmicpc.net/problem/16971)
 - [ ] [레벨 햄버거](https://www.acmicpc.net/problem/16974)
 - [ ] [파이프 옮기기 2](https://www.acmicpc.net/problem/17069)
+
+
+
+# 정올
+
+### 자료의 표현
+- [ ] [비밀편지 1239](http://www.jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=522&sca=99&sfl=wr_hit&stx=1239)
+- [ ] 단어집합(하) 1535
+- [ ] 단어 세기 1516
+- [ ] 2진수를 10진수로 1274
+- [ ] 진법 변환 3106
+
+
+
+### 알고리즘의 성능분석 
+
+- [ ] 연속부분합 찾기 1836
+- [ ] 색종이(고) 1124
+- [ ] 수열 2497
+- [ ] 용액 2300
+
