@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class Main_2193_이친수 {
-
 	static int n;
 	static long[][] cache = new long[91][2];
 	

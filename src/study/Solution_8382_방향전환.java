@@ -4,8 +4,8 @@ import java.io.*;
 import java.util.*;
 
 public class Solution_8382_방향전환{
-	static int[] dx = {0,0,1,-1};
-	static int[] dy = {1,-1,0,0};
+	static int[] dx = {0,1,0,-1};
+	static int[] dy = {1,0,-1,0};
 	static int T,x1,x2,y1,y2;
 	
 	public static void main(String args[]) throws Exception{
@@ -29,7 +29,7 @@ public class Solution_8382_방향전환{
 		
 		Queue<int[]> q = new LinkedList<int[]>();
 		
-		System.out.println(x1+" "+y1+" "+x2+" "+y2);
+		//System.out.println(x1+" "+y1+" "+x2+" "+y2);
 		int nx = x1, ny = y1;
 		int[] que = new int[4];
 		int ans = 333;
@@ -50,12 +50,14 @@ public class Solution_8382_방향전환{
 				q.add(new int[]{nx,ny,d,1});
 			}
 		}
-		System.out.println(q.size());
+		//System.out.println(q.size());
 		
 		while(!q.isEmpty() && (nx!=x2 || ny!=y2)){
 			que = q.poll();
+			//System.out.println("새로 나온 큐"+que[0]+" "+que[1]);
 			for (int d = 0; d<4; d++){
 				if (d%2==que[2]%2){
+					//System.out.println(d);
 					continue;
 				}
 				nx = que[0]+dx[d];
@@ -67,7 +69,7 @@ public class Solution_8382_방향전환{
 				}
 				if (nx>=0 && nx<=200 && ny>=0 && ny<=200 && !vst[nx][ny]){
 				
-				System.out.println(que[3]+" "+ nx+" "+ ny);
+				//System.out.println(que[3]+" "+ nx+" "+ ny+" "+d);
 					q.add(new int[]{nx,ny,d,que[3]+1});
 					vst[nx][ny] = true;	
 				}
