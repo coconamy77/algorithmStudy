@@ -10,7 +10,7 @@ public class Main_6064_카잉달력 {
 		StringTokenizer st =new  StringTokenizer(br.readLine());
 		
 		int T = Integer.parseInt(st.nextToken());
-		int m,n,x,y;
+		int cal[][] = new int[2][2];
 		for (int t = 1; t<=T; t++) {
 			st =new  StringTokenizer(br.readLine());
 			
