@@ -77,7 +77,7 @@ JAVA Algorithm solution
 - [x] [2×n 타일링](https://www.acmicpc.net/problem/11726)
 - [ ] [2×n 타일링 2](https://www.acmicpc.net/problem/11727)
 - [x] [1, 2, 3 더하기](https://www.acmicpc.net/problem/9095)
-- [ ] [1, 2, 3 더하기 3](https://www.acmicpc.net/problem/15988)
+- [ ] [1, 2, 3 더하기 3](https://www.acmicpc.net/problem/15988) ->ing
 - [ ] [카드 구매하기](https://www.acmicpc.net/problem/11052)
 - [ ] [카드 구매하기 2](https://www.acmicpc.net/problem/16194)
 - [ ] [1, 2, 3 더하기 5](https://www.acmicpc.net/problem/15990)
@@ -91,7 +91,7 @@ JAVA Algorithm solution
 - [ ] [가장 큰 증가하는 부분 수열](https://www.acmicpc.net/problem/11055)
 - [ ] [가장 긴 감소하는 부분 수열](https://www.acmicpc.net/problem/11722)
 - [ ] [가장 긴 바이토닉 부분 수열](https://www.acmicpc.net/problem/11054)
-- [ ] [연속합](https://www.acmicpc.net/problem/1912)
+- [x] [연속합](https://www.acmicpc.net/problem/1912)
 - [ ] [연속합 2](https://www.acmicpc.net/problem/13398)
 - [ ] [제곱수의 합](https://www.acmicpc.net/problem/1699)
 - [ ] [합분해](https://www.acmicpc.net/problem/2225)
