@@ -310,7 +310,7 @@ JAVA Algorithm solution
 
 ### 자료의 표현
 - [ ] [비밀편지 1239](http://www.jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=522&sca=99&sfl=wr_hit&stx=1239)
-- [ ] 단어집합(하) 1535
+- [ ] [단어집합(하) 1535](http://www.jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=807&sca=99&sfl=wr_hit&stx=1535)
 - [ ] 단어 세기 1516
 - [ ] 2진수를 10진수로 1274
 - [ ] 진법 변환 3106
