@@ -22,11 +22,11 @@ JAVA Algorithm solution
 
 ## 브루트 포스
 
-- [x] [일곱 난쟁이](https://www.acmicpc.net/problem/2309) ->ing
+- [x] [일곱 난쟁이](https://www.acmicpc.net/problem/2309) 
 - [x] [날짜 계산](https://www.acmicpc.net/problem/1476)
 - [ ] [테트로미노](https://www.acmicpc.net/problem/14500) ->ing
-- [ ] [1, 2, 3 더하기](https://www.acmicpc.net/problem/9095)
-- [ ] [다음 순열](https://www.acmicpc.net/problem/10972)
+- [x] [1, 2, 3 더하기](https://www.acmicpc.net/problem/9095)
+- [ ] [다음 순열](https://www.acmicpc.net/problem/10972) ->ing
 - [ ] [이전 순열](https://www.acmicpc.net/problem/10973)
 - [ ] [모든 순열](https://www.acmicpc.net/problem/10974)
 - [ ] [차이를 최대로](https://www.acmicpc.net/problem/10819)
@@ -76,14 +76,14 @@ JAVA Algorithm solution
 - [x] [1로 만들기](https://www.acmicpc.net/problem/1463)
 - [x] [2×n 타일링](https://www.acmicpc.net/problem/11726)
 - [ ] [2×n 타일링 2](https://www.acmicpc.net/problem/11727)
-- [ ] [1, 2, 3 더하기](https://www.acmicpc.net/problem/9095)
-- [ ] [1, 2, 3 더하기 3](https://www.acmicpc.net/problem/15988)
+- [x] [1, 2, 3 더하기](https://www.acmicpc.net/problem/9095)
+- [ ] [1, 2, 3 더하기 3](https://www.acmicpc.net/problem/15988) ->ing
 - [ ] [카드 구매하기](https://www.acmicpc.net/problem/11052)
 - [ ] [카드 구매하기 2](https://www.acmicpc.net/problem/16194)
 - [ ] [1, 2, 3 더하기 5](https://www.acmicpc.net/problem/15990)
 - [x] [쉬운 계단 수](https://www.acmicpc.net/problem/10844)
 - [x] [오르막 수](https://www.acmicpc.net/problem/11057)
-- [ ] [이친수](https://www.acmicpc.net/problem/2193)
+- [x] [이친수](https://www.acmicpc.net/problem/2193)
 - [x] [스티커](https://www.acmicpc.net/problem/9465)
 - [x] [포도주 시식](https://www.acmicpc.net/problem/2156)
 - [x] [가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/11053)
@@ -91,7 +91,7 @@ JAVA Algorithm solution
 - [ ] [가장 큰 증가하는 부분 수열](https://www.acmicpc.net/problem/11055)
 - [ ] [가장 긴 감소하는 부분 수열](https://www.acmicpc.net/problem/11722)
 - [ ] [가장 긴 바이토닉 부분 수열](https://www.acmicpc.net/problem/11054)
-- [ ] [연속합](https://www.acmicpc.net/problem/1912)
+- [x] [연속합](https://www.acmicpc.net/problem/1912)
 - [ ] [연속합 2](https://www.acmicpc.net/problem/13398)
 - [ ] [제곱수의 합](https://www.acmicpc.net/problem/1699)
 - [ ] [합분해](https://www.acmicpc.net/problem/2225)
@@ -158,12 +158,12 @@ JAVA Algorithm solution
 ### 시뮬레이션
 
 - [ ] [주사위 굴리기](https://www.acmicpc.net/problem/14499)
-- [ ] [톱니바퀴](https://www.acmicpc.net/problem/14891)
+- [x] [톱니바퀴](https://www.acmicpc.net/problem/14891)
 - [ ] [톱니바퀴 (2)](https://www.acmicpc.net/problem/15662)
 - [x] [로봇 청소기](https://www.acmicpc.net/problem/14503)
-- [ ] [경사로](https://www.acmicpc.net/problem/14890)
+- [x] [경사로](https://www.acmicpc.net/problem/14890)
 - [x] [뱀](https://www.acmicpc.net/problem/3190)
-- [ ] [드래곤 커브](https://www.acmicpc.net/problem/15685)
+- [x] [드래곤 커브](https://www.acmicpc.net/problem/15685)
 - [ ] [미네랄](https://www.acmicpc.net/problem/2933)
 - [ ] [iSharp](https://www.acmicpc.net/problem/3568)
 - [ ] [LCD Test](https://www.acmicpc.net/problem/2290)
@@ -172,11 +172,11 @@ JAVA Algorithm solution
 
 - [ ] [테트로미노](https://www.acmicpc.net/problem/14500)
 - [ ] [링크와 스타트](https://www.acmicpc.net/problem/15661)
-- [ ] [연구소](https://www.acmicpc.net/problem/14502)
-- [ ] [감시](https://www.acmicpc.net/problem/15683)
-- [ ] [사다리 조작](https://www.acmicpc.net/problem/15684)
-- [ ] [치킨 배달](https://www.acmicpc.net/problem/15686)
-- [ ] [숫자판 점프](https://www.acmicpc.net/problem/2210)
+- [x] [연구소](https://www.acmicpc.net/problem/14502)
+- [x] [감시](https://www.acmicpc.net/problem/15683)
+- [x] [사다리 조작](https://www.acmicpc.net/problem/15684)
+- [x] [치킨 배달](https://www.acmicpc.net/problem/15686)
+- [x] [숫자판 점프](https://www.acmicpc.net/problem/2210)
 - [ ] [테트리스](https://www.acmicpc.net/problem/3019)
 - [ ] [삼각형의 값](https://www.acmicpc.net/problem/4902)
 - [ ] [자와 각도기](https://www.acmicpc.net/problem/2916)
@@ -228,10 +228,11 @@ JAVA Algorithm solution
 
 ## 추가 문제
 
-- [] [NxM 보드 완주하기](https://www.acmicpc.net/problem/9944)
+- [x] [NxM 보드 완주하기](https://www.acmicpc.net/problem/9944)
+
 - [ ] [수족관 1](https://www.acmicpc.net/problem/8982)
 - [ ] [스도미노쿠](https://www.acmicpc.net/problem/4574)
-- [ ] [욕심쟁이 판다](https://www.acmicpc.net/problem/1937)
+- [x] [욕심쟁이 판다](https://www.acmicpc.net/problem/1937)
 - [ ] [사탕 게임](https://www.acmicpc.net/problem/3085)
 - [ ] [로봇 조종하기](https://www.acmicpc.net/problem/2169)
 - [ ] [가장 큰 정사각형](https://www.acmicpc.net/problem/1915)
@@ -240,7 +241,7 @@ JAVA Algorithm solution
 
 ### 시뮬레이션
 
-- [ ] [나무 재테크](https://www.acmicpc.net/problem/16235)
+- [x] [나무 재테크](https://www.acmicpc.net/problem/16235)
 - [ ] [2×2×2 큐브](https://www.acmicpc.net/problem/16939)
 - [ ] [큐빙](https://www.acmicpc.net/problem/5373)
 - [ ] [봄버맨](https://www.acmicpc.net/problem/16918)
