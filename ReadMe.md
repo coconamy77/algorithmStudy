@@ -320,7 +320,7 @@ JAVA Algorithm solution
 ### 알고리즘의 성능분석 
 
 - [x] [연속부분합 찾기 1836](http://www.jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=1109&sca=2060)
-- [ ] 색종이(고) 1124
+- [ ] [색종이(고) 1124](http://www.jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=404&sca=99&sfl=wr_hit&stx=1124)
 - [ ] 수열 2497
 - [ ] 용액 2300
 
