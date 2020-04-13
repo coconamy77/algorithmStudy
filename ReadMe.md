@@ -313,7 +313,7 @@ JAVA Algorithm solution
 - [x] [단어집합(하) 1535](http://www.jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=807&sca=99&sfl=wr_hit&stx=1535)
 - [x] [단어 세기 1516](http://www.jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=788&sca=99&sfl=wr_hit&stx=1516)
 - [ ] [2진수를 10진수로 1274](http://www.jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=557&sca=99&sfl=wr_hit&stx=1274)
-- [ ] 진법 변환 3106
+- [ ] [진법 변환 3106](http://www.jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=2375&sca=99&sfl=wr_hit&stx=3106)
 
 
 
