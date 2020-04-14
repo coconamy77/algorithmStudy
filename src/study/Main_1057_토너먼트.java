@@ -17,13 +17,26 @@ public class Main_1057_토너먼트 {
 		int round = 0;
 		
 		while(true) {
-			if (N==Math.pow(2, round)) {
+			if (N<=Math.pow(2, round++)) {
 				break;
 			}
 		}
 		
+		int mid =1;
+		while(round>0) {
+			mid = (int) (Math.pow(2, round)/2);
+			
+			if ((a>mid && b<=mid) || b>mid && a<=mid) {
+				break;
+			}
+			else if(a>mid) {
+				a -=mid;
+				b -=mid;
+			}
+			round--;
+		}
 		
-		
+		System.out.println(round);
 		
 	}
 }
