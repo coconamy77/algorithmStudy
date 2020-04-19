@@ -6,50 +6,57 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main_1461_도서관 {
+	static int[] map;
+	static int N,M,ncnt,pcnt;
+	
+	static int goP() {
+		
+		
+		return 0;
+	}
+	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 
-		int N = Integer.parseInt(st.nextToken());
-		int M = Integer.parseInt(st.nextToken());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
 
-		int[] map = new int[N];
+		map = new int[N];
 
 		st = new StringTokenizer(br.readLine());
 
-		int cnt = 0;
+		ncnt = 0;
+		pcnt = 0;
 		for (int n = 0; n < N; n++) {
 			map[n] = Integer.parseInt(st.nextToken());
 			if (map[n] < 0)
-				cnt++;
+				ncnt++;
 		}
-
+		pcnt = N-ncnt;
+		
 		Arrays.sort(map);
 
-		int ans = 0;
-		int idx = cnt;
-
-		if (cnt == 0 || map[0] * -1 >= map[N - 1]) {
-			int ncnt = cnt + (N - cnt) % M;
-			if (ncnt>cnt) {
-				ans += map[idx];
+		if (pcnt==0) {
+			//음수얘들만 가~
+		}else if (ncnt ==0) {
+			//양수 애들만 가~
+		}else {
+			if (Math.abs(map[0])>Math.abs(map[N-1])) {
+				//양수 먼저 가고 
+				//0으로 돌아가서
+				//음수 가자
+				
+			}else {
+				//음수 먼저 가고 
+				//0으로 돌아가서 
+				//양수 가자
 			}
-			for (int i = cnt; i < ncnt; i++) {
-				ans+= map[i]-map[idx];
-				idx = i;
-			}
-			ans += map[idx];
-			idx = ncnt;
-			for (int i = ncnt+1; i < N; i++) {
-				ans+=map[i]-map[idx];
-				idx = i;
-			}
-			if(cnt!=0) {
-				ans += map[idx];
-			}
-			
-			
 		}
+		
+		
+
+		
 
 	}
 
