@@ -10,6 +10,22 @@ public class Main_1461_도서관 {
 	static int N,M,ncnt,pcnt;
 	
 	static int goP() {
+		int n = N-ncnt-1;
+		int ans = 0;
+		int loc = 0;
+		for (int i = n; i<n+pcnt%M;i++) {
+			ans +=(map[i]-loc);
+			loc = map[i];			
+		}
+		ans += loc;
+		loc = 0;
+		
+		while(loc<map[N-1]) {
+			n = M;
+			while(n>0) {
+				
+			}
+		}
 		
 		
 		return 0;
