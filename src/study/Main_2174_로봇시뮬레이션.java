@@ -22,7 +22,9 @@ class Robot{
 //		// TODO Auto-generated method stub
 //		return no+", "+ d+"|";
 //	}
-	/*
+	
+	
+/*
 5 4
 2 4
 1 1 E
@@ -31,7 +33,7 @@ class Robot{
 1 F 1
 1 L 5
 2 F 7
-	*/
+*/
 	
 }
 
@@ -110,7 +112,7 @@ public class Main_2174_로봇시뮬레이션 {
 					ny = ny+dy[d];
 					
 					if(nx<1 || ny<1 || nx>B || ny>A ) {
-						//System.out.println("nx: " +nx+", ny: "+ny+", A: "+A+", B: "+B);
+//						System.out.println("nx: " +nx+", ny: "+ny+", A: "+A+", B: "+B);
 						System.out.println("Robot "+no +" crashes into the wall");
 						fin = true;
 						break;
