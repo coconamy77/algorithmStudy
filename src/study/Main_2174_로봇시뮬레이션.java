@@ -16,12 +16,13 @@ class Robot{
 		this.x = x;
 		this.y = y;
 	}
-//	
-//	@Override
-//	public String toString() {
-//		// TODO Auto-generated method stub
-//		return no+", "+ d+"|";
-//	}
+	
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return no+", "+ d+"|";
+	}
 	
 	
 /*

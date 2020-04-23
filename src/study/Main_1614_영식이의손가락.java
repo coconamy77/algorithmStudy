@@ -7,9 +7,9 @@ public class Main_1614_영식이의손가락 {
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
-		int t = Integer.parseInt(br.readLine());
+		long t = Long.parseLong(br.readLine());
 		
-		int ans  = 0;
+		long ans  = 0;
 		
 		if (n==1) {
 			ans = t*8;
