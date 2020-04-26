@@ -12,7 +12,7 @@ public class Main_17779_게리멘더링2 {
 	
 	static int check(int x, int y, int p1, int p2) {
 		
-		int[][] vst = new int[N][N];
+		boolean[][] vst = new boolean[N][N];
 		int max = 0;
 		int min = 0;
 		int sum =0;
@@ -22,12 +22,12 @@ public class Main_17779_게리멘더링2 {
 			if (i<x) {
 				for (int j = 0; j<=y;j++) {
 					sum += map[i][j];
-					vst[i][j] = 1;
+					vst[i][j] = true;
 				}
 			}else {
 				for (int j = 0; j<=y-(i-x+1);j++) {
 					sum += map[i][j];
-					vst[i][j] = 1;
+					vst[i][j] = true;
 				}
 			}
 		}
@@ -40,22 +40,22 @@ public class Main_17779_게리멘더링2 {
 			if (j<=y+p2) {
 				for (int i = 0; i<x+(j-y);i++) {
 					sum += map[i][j];
-					vst[i][j] = 2;
+					vst[i][j] = true;
 				}
 			}else {
 				for (int i = 0; i<=x+p2;i++) {
 					sum += map[i][j];
-					vst[i][j] = 2;
+					vst[i][j] = true;
 				}
 			}
 		}
 		if (min>sum) {
 			min = sum;
-			System.out.println("min은 2구역");
+			//System.out.println("min은 2구역");
 		}
 		if (max<sum) {
 			max = sum;
-			System.out.println("max은 2구역");
+			//System.out.println("max은 2구역");
 		}
 		
 		//3구역
@@ -66,49 +66,49 @@ public class Main_17779_게리멘더링2 {
 			if (i<tx+p2) {
 				for (int j = 0; j<ty+(i-tx);j++) {
 					sum += map[i][j];
-					vst[i][j] = 3;
+					vst[i][j] = true;
 				}
 			}else {
 				for (int j = 0; j<ty+p2;j++) {
 					sum += map[i][j];
-					vst[i][j] = 3;
+					vst[i][j] = true;
 				}
 			}
 		}
 		if (min>sum) {
 			min = sum;
-			System.out.println("min은 3구역");
+			//System.out.println("min은 3구역");
 		}
 		if (max<sum) {
 			max = sum;
-			System.out.println("max은 3구역");
+			//System.out.println("max은 3구역");
 		}
 		
 		
 		//4구역
 		sum = 0;
 		tx = x+p1+p2;
-		ty = y+p2;
-		for (int i = N-1; i>tx-p2;i--) {
+		ty = (y-p1)+p2;
+		for (int i = N-1; i>tx-p1;i--) {
 			if (i>tx) {
 				for (int j = N-1;j>=ty;j-- ) {
 					sum += map[i][j];
-					vst[i][j] = 4;
+					vst[i][j] = true;
 				}
 			}else {
 				for (int j = N-1; j>ty+(tx-i);j--) {
 					sum += map[i][j];
-					vst[i][j] = 4;
+					vst[i][j] = true;
 				}
 			}
 		}
 		if (min>sum) {
 			min = sum;
-			System.out.println("min은 4구역");
+			//System.out.println("min은 4구역");
 		}
 		if (max<sum) {
 			max = sum;
-			System.out.println("max은 4구역");
+			//System.out.println("max은 4구역");
 		}
 		
 		
@@ -116,24 +116,24 @@ public class Main_17779_게리멘더링2 {
 		sum = 0; 
 		for (int i =0 ; i<N; i++) {
 			for (int j = 0; j<N; j++) {
-				if (vst[i][j]==0) {
+				if (!vst[i][j]) {
 					sum += map[i][j];
 				}
 			}
 		}
 		if (min>sum) {
 			min = sum;
-			System.out.println("min은 5구역");
+			//System.out.println("min은 5구역");
 		}
 		if (max<sum) {
 			max = sum;
-			System.out.println("max은 5구역");
+			//System.out.println("max은 5구역");
 		}
-		System.out.println(max + ", "+min);
+		//System.out.println(max + ", "+min);
 		
-		for (int i = 0; i<N; i++) {
-			System.out.println(Arrays.toString(vst));
-		}
+//		for (int i = 0; i<N; i++) {
+//			System.out.println(Arrays.toString(vst[i]));
+//		}
 		
 		return max-min;
 	}
@@ -159,7 +159,7 @@ public class Main_17779_게리멘더링2 {
 			for (int j = 1; j<N-1; j++) {
 				int x = 1, y = 1;
 				for (; i+x+y<N;x++) {
-					y = 1;
+					
 					if (j-x<0) {
 						break;
 					}
@@ -168,11 +168,12 @@ public class Main_17779_게리멘더링2 {
 							break;
 						}
 						tmp = check(i,j, x, y);
-						System.out.println("i="+i+", j="+j+", x="+x+", y="+y+", tmp = "+tmp);
+						//System.out.println("i="+i+", j="+j+", x="+x+", y="+y+", tmp = "+tmp);
 						if (tmp<ans) {
 							ans = tmp;
 						}
 					}
+					y = 1;
 				}
 			}
 		}
