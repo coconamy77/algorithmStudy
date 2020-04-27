@@ -27,17 +27,46 @@ public class Main_1461_도서관 {
 		Arrays.sort(map);
 
 		int ans = 0;
+		int idx = cnt;
 
 		if (cnt == 0 || map[0] * -1 >= map[N - 1]) {
 			int ncnt = cnt + (N - cnt) % M;
-			ans += map[ncnt];
-			for (int i = cnt+1; i < ncnt; i++) {
-				//ans+=
+			if (ncnt>cnt) {
+				ans += map[idx];
 			}
-
-			for (int i = ncnt; i < N; i++) {
-
+			for (int i = cnt; i < ncnt; i++) {
+				ans+= map[i]-map[idx];
+				idx = i;
 			}
+			ans += map[idx];
+			idx = ncnt;
+			for (int i = ncnt+1; i < N; i++) {
+				ans+=map[i]-map[idx];
+				idx = i;
+			}
+			if(cnt!=0) {
+				ans += map[idx];
+			}
+			
+			
+			ncnt = cnt + (cnt) % M;
+			if (ncnt>cnt) {
+				ans += map[idx];
+			}
+			for (int i = cnt; i < ncnt; i++) {
+				ans+= map[i]-map[idx];
+				idx = i;
+			}
+			ans += map[idx];
+			idx = ncnt;
+			for (int i = ncnt+1; i < N; i++) {
+				ans+=map[i]-map[idx];
+				idx = i;
+			}
+			if(cnt!=0) {
+				ans += map[idx];
+			}
+			
 		}
 
 	}
