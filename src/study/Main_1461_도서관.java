@@ -49,24 +49,6 @@ public class Main_1461_도서관 {
 			}
 			
 			
-			ncnt = cnt + (cnt) % M;
-			if (ncnt>cnt) {
-				ans += map[idx];
-			}
-			for (int i = cnt; i < ncnt; i++) {
-				ans+= map[i]-map[idx];
-				idx = i;
-			}
-			ans += map[idx];
-			idx = ncnt;
-			for (int i = ncnt+1; i < N; i++) {
-				ans+=map[i]-map[idx];
-				idx = i;
-			}
-			if(cnt!=0) {
-				ans += map[idx];
-			}
-			
 		}
 
 	}
