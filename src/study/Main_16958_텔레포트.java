@@ -82,7 +82,16 @@ public class Main_16958_텔레포트 {
 				City c = pq.poll();
 				
 				vst[c.idx] = true;
-				
+				for(int i = 1; i<=N; i++) {
+					if(i==n) {
+						continue;
+					}
+					if(dist[c.idx][i]==0) {
+						dist[c.idx][i] = graph[c.idx][i];
+					}else if(dist[c.idx][i]<graph[c.idx][i]) {
+						
+					}
+				}
 				
 			}
 		}
