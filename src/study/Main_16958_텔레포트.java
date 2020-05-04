@@ -5,15 +5,31 @@ import java.io.InputStreamReader;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-class City{
+class City implements Comparable<City>{
 	int x;
 	int y;
 	int s;
-	public City(int s, int x, int y) {
+	
+	int idx;
+	int val;
+	
+	public City(int s, int x, int y, int idx) {
 		super();
 		this.x = x;
 		this.y = y;
 		this.s = s;
+		this.idx = idx;
+		this.val = 1000001;
+	}
+
+
+	@Override
+	public int compareTo(City o) {
+		if (this.val>o.val) {
+			return 1;
+		}else {
+			return -1;
+		}
 	}
 	
 	
@@ -22,14 +38,6 @@ class City{
 
 
 public class Main_16958_텔레포트 {
-	Comparable<int[]> com = new Comparable<int[]>() {
-		
-		@Override
-		public int compareTo(int[] o) {
-			// TODO Auto-generated method stub
-			return 0;
-		}
-	};
 
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -41,6 +49,7 @@ public class Main_16958_텔레포트 {
 		City[] city = new City[N+1];
 		
 		int[][] graph = new int[N+1][N+1];
+		int[][] dist = new int[N+1][N+1];
 		int x,y,s;
 		City tmp;
 		for (int n=1; n<=N; n++) {
@@ -48,7 +57,7 @@ public class Main_16958_텔레포트 {
 			x = Integer.parseInt(st.nextToken());
 			y = Integer.parseInt(st.nextToken());
 			s = Integer.parseInt(st.nextToken());
-			city[n] = new City(x,y,s);
+			city[n] = new City(x,y,s,n);
 			
 			for (int i = 1; i<n; i++) {
 				tmp = city[i];
@@ -62,9 +71,20 @@ public class Main_16958_텔레포트 {
 			}
 		}
 		
+	
+		PriorityQueue<City> pq;
+		boolean[] vst = new boolean[N+1];
 		for (int n = 1; n<=N; n++) {
-			PriorityQueue<int[]> pq = new PriorityQueue<>();
+			pq = new PriorityQueue<>();
+			pq.add(city[n]);
 			
+			while(!pq.isEmpty()) {
+				City c = pq.poll();
+				
+				vst[c.idx] = true;
+				
+				
+			}
 		}
 	}
 }
