@@ -2,6 +2,7 @@ package study;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 class City{
@@ -18,7 +19,17 @@ class City{
 	
 }
 
+
+
 public class Main_16958_텔레포트 {
+	Comparable<int[]> com = new Comparable<int[]>() {
+		
+		@Override
+		public int compareTo(int[] o) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+	};
 
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -52,6 +63,7 @@ public class Main_16958_텔레포트 {
 		}
 		
 		for (int n = 1; n<=N; n++) {
+			PriorityQueue<int[]> pq = new PriorityQueue<>();
 			
 		}
 	}
