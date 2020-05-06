@@ -1,8 +1,6 @@
 package programmers;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -37,49 +35,45 @@ class Node implements Comparable<Node> {
 }
 
 public class Solution_길찾기게임 {
+	static int smallest = 0, postIdx = 0;
 
-	static int smallest = 0;
+	public int findPre(Node node, int limL, int limR, int i, int idx, int[][] ans, List<Node> list) {
+		ans[0][idx++] = node.name;
 
-	public int findPre(Node node,int i, int idx, int[] pre, List<Node> list) {
-		//Node node = list.remove(parent);
-		pre[idx++] = node.name;
-		System.out.println(Arrays.toString(pre));
-		
-		if (node.x==smallest) {
+		if (node.x == smallest) {
 			list.add(node);
-			
+			ans[1][postIdx++] = node.name;
 			return idx;
 		}
-		
+
 		Node tmp;
 		int child = 0;
 		if (node.x > smallest) {
 			for (int j = i; j < list.size(); j++) {
 				tmp = list.get(j);
-				if (tmp.x<child) {
+				if (tmp.x < child) {
 					break;
 				}
 				if (node.x != tmp.x) {
 					child = tmp.x;
-					if (tmp.y<node.y) {
+					if (tmp.y < node.y && tmp.y > limL) {
 						node.num = 1;
-						idx = findPre(list.remove(j),j--,idx,pre, list);
-					}else {
+						idx = findPre(list.remove(j), limL, node.y, j--, idx, ans, list);
+					} else if (tmp.y > node.y && tmp.y < limR) {
 						node.num++;
-						idx = findPre(list.remove(j),j--,idx,pre, list);
+						idx = findPre(list.remove(j), node.y, limR, j--, idx, ans, list);
 						break;
 					}
 				}
-
 			}
 		}
 		list.add(node);
+		ans[1][postIdx++] = node.name;
 		return idx;
 
 	}
 
 	public int[][] solution(int[][] nodeinfo) {
-		int[][] answer = {};
 		int x, y;
 
 		List<Node> list = new ArrayList<Node>();
@@ -94,12 +88,9 @@ public class Solution_길찾기게임 {
 		Collections.sort(list);
 		smallest = list.get(i - 1).x;
 
-		int[] pre = new int[i];
+		int[][] answer = new int[2][i];
 
-		findPre(list.remove(0),0, 0, pre, list);
-		
-		System.out.println(Arrays.toString(pre));
-
+		findPre(list.remove(0), 0, 100000, 0, 0, answer, list);
 		return answer;
 	}
 
