@@ -4,6 +4,9 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 class Main_dege{
+	
+	//벽을 둘러싸고 있는 모서리의 길이 구하기
+	
 	static int[] dx = {0,0,1,-1};
 	static int[] dy = {1,-1,0,0};
 	public static void main(String[] args) throws Exception{
