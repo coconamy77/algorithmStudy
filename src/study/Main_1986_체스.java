@@ -11,7 +11,6 @@ public class Main_1986_체스 {
 	static int N, M;
 
 	static void goQ(int i, int j, int d) {
-
 		int nx = i + dx[d];
 		int ny = j + dy[d];
 		//System.out.println(nx+" "+ny);
@@ -48,13 +47,7 @@ public class Main_1986_체스 {
 				map[x][y] = i;
 			}
 		}
-//		for (int i = 1; i<=N; i++) {
-//			for (int j = 1; j<=M; j++) {
-//				System.out.print(map[i][j]+" ");
-//			}
-//			System.out.println();
-//		}
-
+		
 		int[] kx = { -2, -2, 2, 2,-1,-1,1,1 };
 		int[] ky = { -1, 1, -1, 1,-2,2,2,-2 };
 
@@ -65,9 +58,7 @@ public class Main_1986_체스 {
 					switch (map[n][m]) {
 					case 1:
 						for (int d = 0; d < 8; d++) {
-							//answer[n][m] = -1;
 							goQ(n, m, d);
-							
 						}
 						break;
 					case 2:
@@ -87,7 +78,6 @@ public class Main_1986_체스 {
 		int ans = 0;
 
 		for (int i = 1; i <= N; i++) {
-			//System.out.println(Arrays.toString(answer[i]));
 			for (int j = 1; j <= M; j++) {
 				if (answer[i][j] == 0) {
 					ans++;
