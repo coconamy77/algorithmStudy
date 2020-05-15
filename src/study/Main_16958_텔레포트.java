@@ -88,6 +88,7 @@ public class Main_16958_텔레포트 {
 					}
 					if(dist[c.idx][i]==0) {
 						dist[c.idx][i] = graph[c.idx][i];
+						
 					}else if(dist[c.idx][i]<graph[c.idx][i]) {
 						
 					}
