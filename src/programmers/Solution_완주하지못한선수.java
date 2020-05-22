@@ -1,3 +1,5 @@
+package programmers;
+
 import java.util.HashMap;
 
 class Solution_완주하지못한선수 {
