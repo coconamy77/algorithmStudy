@@ -40,11 +40,10 @@ public class Solution_길찾기게임 {
 	public int findPre(Node node, int limL, int limR, int i, int idx, int[][] ans, List<Node> list) {
 		ans[0][idx++] = node.name;
 
-		if (node.x == smallest) {
-			list.add(node);
-			ans[1][postIdx++] = node.name;
-			return idx;
-		}
+		
+		  if (node.x == smallest) { list.add(node); ans[1][postIdx++] = node.name;
+		  return idx; }
+		 
 
 		Node tmp;
 		int child = 0;
