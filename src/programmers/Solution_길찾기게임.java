@@ -8,7 +8,6 @@ class Node implements Comparable<Node> {
 	int x;
 	int y;
 	int name;
-	int num;
 
 	public Node(int x, int y, int name) {
 		super();
@@ -40,33 +39,28 @@ public class Solution_길찾기게임 {
 	public int findPre(Node node, int limL, int limR, int i, int idx, int[][] ans, List<Node> list) {
 		ans[0][idx++] = node.name;
 
-		
-		  if (node.x == smallest) { list.add(node); ans[1][postIdx++] = node.name;
-		  return idx; }
-		 
+		if (node.x == smallest) {
+			ans[1][postIdx++] = node.name;
+			return idx;
+		}
 
 		Node tmp;
 		int child = 0;
-		if (node.x > smallest) {
-			for (int j = i; j < list.size(); j++) {
-				tmp = list.get(j);
-				if (tmp.x < child) {
+		for (int j = i; j < list.size(); j++) {
+			tmp = list.get(j);
+			if (tmp.x < child) {
+				break;
+			}
+			if (node.x != tmp.x) {
+				child = tmp.x;
+				if (tmp.y < node.y && tmp.y > limL) {
+					idx = findPre(list.remove(j), limL, node.y, j--, idx, ans, list);
+				} else if (tmp.y > node.y && tmp.y < limR) {
+					idx = findPre(list.remove(j), node.y, limR, j--, idx, ans, list);
 					break;
-				}
-				if (node.x != tmp.x) {
-					child = tmp.x;
-					if (tmp.y < node.y && tmp.y > limL) {
-						node.num = 1;
-						idx = findPre(list.remove(j), limL, node.y, j--, idx, ans, list);
-					} else if (tmp.y > node.y && tmp.y < limR) {
-						node.num++;
-						idx = findPre(list.remove(j), node.y, limR, j--, idx, ans, list);
-						break;
-					}
 				}
 			}
 		}
-		list.add(node);
 		ans[1][postIdx++] = node.name;
 		return idx;
 
@@ -86,10 +80,12 @@ public class Solution_길찾기게임 {
 
 		Collections.sort(list);
 		smallest = list.get(i - 1).x;
-
+		//System.out.println(smallest);
 		int[][] answer = new int[2][i];
 
-		findPre(list.remove(0), 0, 100000, 0, 0, answer, list);
+		findPre(list.remove(0), -1, 100001, 0, 0, answer, list);
+//		System.out.println(Arrays.toString(answer[0]));
+//		System.out.println(Arrays.toString(answer[1]));
 		return answer;
 	}
 
@@ -97,5 +93,6 @@ public class Solution_길찾기게임 {
 		Solution_길찾기게임 s = new Solution_길찾기게임();
 		s.solution(new int[][] { { 5, 3 }, { 11, 5 }, { 13, 3 }, { 3, 5 }, { 6, 1 }, { 1, 3 }, { 8, 6 }, { 7, 2 },
 				{ 2, 2 } });
+		// s.solution(new int[][] { { 5, 3 } });
 	}
 }
