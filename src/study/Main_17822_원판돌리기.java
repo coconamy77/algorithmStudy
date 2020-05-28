@@ -69,7 +69,8 @@ public class Main_17822_원판돌리기 {
 	}
 	
 	static void go() {
-		double ave = total/num;
+		double ave = (double)total/num;
+		//System.out.println(ave);
 		for (int i = 1; i<=N;i++) {
 			for (int j = 0; j<M; j++) {
 				if (map[i][j]==0) {
@@ -105,12 +106,13 @@ public class Main_17822_원판돌리기 {
 		
 		int x,d,k;
 		int[] moved = new int[N+1];
-		
+		boolean ch = false;
 		for (int t = 0; t<T; t++) {
 			
-			for (int i = 0; i<N+2; i++) {
-				System.out.println(Arrays.toString(map[i]));
-			}
+//			System.out.println();
+//			for (int i = 0; i<N+2; i++) {
+//				System.out.println(Arrays.toString(map[i]));
+//			}
 			st = new StringTokenizer(br.readLine());
 			
 			x = Integer.parseInt(st.nextToken());
@@ -120,27 +122,29 @@ public class Main_17822_원판돌리기 {
 			int n = 1;
 			for(;N>=n*x;n++) {
 				if (d==0) {
-					map[n*x][M] = (map[n*n][M]-k+M)%M;
+					map[n*x][M] = (map[n*x][M]-k+M)%M;
 					moved[n-1] = n*x;
 				}else {
-					map[n*x][M] = (map[n*n][M]+k)%M;
+					map[n*x][M] = (map[n*x][M]+k)%M;
 					moved[n-1] = n*x;
 				}
 			}
 			moved[n-1] = 0;
 			
-			if (t==0) {
+			if (t==0||!ch) {
 				for (int m=0; m<N;m++) {
 					moved[m] = m+1;
 				}
 			}
-			
+//			System.out.println();
 //			System.out.println(Arrays.toString(moved));
+//			System.out.println();
 //			for (int i = 0; i<N+2; i++) {
 //				System.out.println(Arrays.toString(map[i]));
 //			}
-			//System.out.println();
-			if (!check(moved)) {
+//			System.out.println();
+			ch = check(moved);
+			if (!ch) {
 				go();
 			}
 //			System.out.println();
