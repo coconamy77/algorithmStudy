@@ -77,8 +77,10 @@ public class Main_17822_원판돌리기 {
 					continue;
 				}else if (map[i][j]>ave) {
 					map[i][j]--;
+					total --;
 				}else if (map[i][j]<ave) {
 					map[i][j]++;
+					total++;
 				}
 			}
 		}
