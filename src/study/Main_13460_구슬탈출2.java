@@ -154,7 +154,7 @@ public class Main_13460_구슬탈출2 {
 			
 		}
 		
-		public boolean moveBall(int ball,int dx,int dy) {
+		public int moveBall(int ball,int dx,int dy) {
 			int nx = loc[ball][0]+dx;
 			int ny = loc[ball][1]+dy;
 			
@@ -163,13 +163,15 @@ public class Main_13460_구슬탈출2 {
 				ny = ny+dy;
 			}
 			if (map[nx][ny] == 2) {
-				return true;
+				return 2;
 			
-			}else {
+			}else if (map[nx][ny]==-2){
+				return -2;
+			}else{			
 				loc[ball][0] = nx-dx;
 				loc[ball][1] = ny-dy;
 			}
-			return false;
+			return return -1;
 		}
 		
 		public State(int[][] loc, int d, int move) {
