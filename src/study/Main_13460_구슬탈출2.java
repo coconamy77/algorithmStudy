@@ -171,7 +171,7 @@ public class Main_13460_구슬탈출2 {
 				loc[ball][0] = nx-dx;
 				loc[ball][1] = ny-dy;
 			}
-			return return -1;
+			return -1;
 		}
 		
 		public State(int[][] loc, int d, int move) {
