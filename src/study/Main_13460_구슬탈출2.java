@@ -28,128 +28,128 @@ public class Main_13460_구슬탈출2 {
 		
 		public int move() {
 			move++;
-//			switch(d) {
-//			case 0:
-//				if (loc[0][0]==loc[1][0]) {
-//					if (loc[0][1]>loc[1][1]) {
-//						if (moveBall(0,0,1)) {
-//							fin = move;
-//						}
-//						if (moveBall(1,0,1)) {
-//							fin = -1;
-//							return fin;
-//						}
-//					}else {
-//						if (moveBall(1,0,1)) {
-//							fin = -1;
-//							return  fin;
-//						}
-//						if(moveBall(0,0,1)) {
-//							fin = move;
-//						}
-//					}
-//				}else {
-//					if (moveBall(1,0,1)) {
-//						fin = -1;
-//						return  fin;
-//					}
-//					if(moveBall(0,0,1)) {
-//						fin = move;
-//					}
-//				}
-//				break;
-//			case 1:
-//				if (loc[0][1]==loc[1][1]) {
-//					if (loc[0][0]>loc[1][0]) {
-//						if (moveBall(0,1,0)) {
-//							fin = move;
-//						}
-//						if (moveBall(1,1,0)) {
-//							fin = -1;
-//							return fin;
-//						}
-//					}else {
-//						if (moveBall(1,1,0)) {
-//							fin = -1;
-//							return fin;
-//						}
-//						if(moveBall(0,1,0)) {
-//							fin = move;
-//						}
-//					}
-//				}else {
-//					if (moveBall(1,1,0)) {
-//						fin = -1;
-//						return fin;
-//					}
-//					if(moveBall(0,1,0)) {
-//						fin = move;
-//					}
-//				}
-//				break;
-//			case 2:
-//				if (loc[0][0]==loc[1][0]) {
-//					if (loc[0][1]<loc[1][1]) {
-//						if (moveBall(0,0,-1)) {
-//							fin = move;
-//						}
-//						if (moveBall(1,0,-1)) {
-//							fin = -1;
-//							return fin;
-//						}
-//					}else {
-//						if (moveBall(1,0,-1)) {
-//							fin = -1;
-//							return fin;
-//						}
-//						if(moveBall(0,0,-1)) {
-//							fin = move;
-//						}
-//					}
-//				}else {
-//					if (moveBall(1,0,-1)) {
-//						fin = -1;
-//						return fin;
-//					}
-//					if(moveBall(0,0,-1)) {
-//						fin = move;
-//					}
-//				}
-//				break;
-//			case 3:
-//				if (loc[0][1]==loc[1][1]) {
-//					if (loc[0][0]<loc[1][0]) {
-//						if (moveBall(0,-1,0)) {
-//							fin = move;
-//						}
-//						if (moveBall(1,-1,0)) {
-//							fin = -1;
-//							return fin;
-//						}
-//					}else {
-//						if (moveBall(1,-1,0)) {
-//							fin = -1;
-//							return fin;
-//						}
-//						if(moveBall(0,-1,0)) {
-//							fin = move;
-//						}
-//					}
-//				}else {
-//					if (moveBall(1,-1,0)) {
-//						fin = -1;
-//						return fin;
-//					}
-//					if(moveBall(0,-1,0)) {
-//						fin = move;
-//					}
-//				}
-//				break;
-//			}
-//
-//			if (map[loc[0][0]][loc[0][1]]==-2) {
-//				return -1;
-//			}
+			switch(d) {
+			case 0:
+				if (loc[0][0]==loc[1][0]) {
+					if (loc[0][1]>loc[1][1]) {
+						if (moveBall(0,0,1)) {
+							fin = move;
+						}
+						if (moveBall(1,0,1)) {
+							fin = -1;
+							return fin;
+						}
+					}else {
+						if (moveBall(1,0,1)) {
+							fin = -1;
+							return  fin;
+						}
+						if(moveBall(0,0,1)) {
+							fin = move;
+						}
+					}
+				}else {
+					if (moveBall(1,0,1)) {
+						fin = -1;
+						return  fin;
+					}
+					if(moveBall(0,0,1)) {
+						fin = move;
+					}
+				}
+				break;
+			case 1:
+				if (loc[0][1]==loc[1][1]) {
+					if (loc[0][0]>loc[1][0]) {
+						if (moveBall(0,1,0)) {
+							fin = move;
+						}
+						if (moveBall(1,1,0)) {
+							fin = -1;
+							return fin;
+						}
+					}else {
+						if (moveBall(1,1,0)) {
+							fin = -1;
+							return fin;
+						}
+						if(moveBall(0,1,0)) {
+							fin = move;
+						}
+					}
+				}else {
+					if (moveBall(1,1,0)) {
+						fin = -1;
+						return fin;
+					}
+					if(moveBall(0,1,0)) {
+						fin = move;
+					}
+				}
+				break;
+			case 2:
+				if (loc[0][0]==loc[1][0]) {
+					if (loc[0][1]<loc[1][1]) {
+						if (moveBall(0,0,-1)) {
+							fin = move;
+						}
+						if (moveBall(1,0,-1)) {
+							fin = -1;
+							return fin;
+						}
+					}else {
+						if (moveBall(1,0,-1)) {
+							fin = -1;
+							return fin;
+						}
+						if(moveBall(0,0,-1)) {
+							fin = move;
+						}
+					}
+				}else {
+					if (moveBall(1,0,-1)) {
+						fin = -1;
+						return fin;
+					}
+					if(moveBall(0,0,-1)) {
+						fin = move;
+					}
+				}
+				break;
+			case 3:
+				if (loc[0][1]==loc[1][1]) {
+					if (loc[0][0]<loc[1][0]) {
+						if (moveBall(0,-1,0)) {
+							fin = move;
+						}
+						if (moveBall(1,-1,0)) {
+							fin = -1;
+							return fin;
+						}
+					}else {
+						if (moveBall(1,-1,0)) {
+							fin = -1;
+							return fin;
+						}
+						if(moveBall(0,-1,0)) {
+							fin = move;
+						}
+					}
+				}else {
+					if (moveBall(1,-1,0)) {
+						fin = -1;
+						return fin;
+					}
+					if(moveBall(0,-1,0)) {
+						fin = move;
+					}
+				}
+				break;
+			}
+
+			if (map[loc[0][0]][loc[0][1]]==-2) {
+				return -1;
+			}
 			return fin;
 			
 		}
