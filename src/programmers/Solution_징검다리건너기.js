@@ -1,29 +1,40 @@
-function solution(stones, k) {
-    var answer = 0;
-    
-    let check = true;
-    while(check){
-        for(let i = 0; i<stones.length; i++){
-            if (stones[i]===0){
-                let count = 0;
-                while(i<stones.length && count<k){
-                    if(stones[i]>0){
-                        stones[i]--;
-                        break;
-                    }
-                    count++;
-                    i++;
-                }
-                if(count>=k){
-                    check = false;
-                }
-            }else{
-                stones[i]--;
+function isSuc(stones, k, pass){
+    let count = 0;
+    for(let i = 0; i<stones.length; i++){
+        let stone = stones[i]-pass;
+        if (stone<=0){
+            count++;
+            if(count>=k){
+                return false;
             }
-        }
-        if(check){
-            answer++;
+        }else{
+            count = 0;
         }
     }
-    return answer;
+    return true;
+}
+
+function solution(stones, k) {
+    let max = stones[0];
+    let min = stones[0];
+    stones.forEach(function(stone){
+        if(max<stone){
+            max = stone;
+        }
+        if(min>stone){
+            min = stone;
+        }
+    });
+    
+    let pass = max;
+    while(max>=min){
+        pass = parseInt((max+min)/2);
+        if(isSuc(stones,k,pass)){
+            min = pass+1;
+        }else{
+            max = pass-1;
+        }
+    }
+    
+    return min;
 }
