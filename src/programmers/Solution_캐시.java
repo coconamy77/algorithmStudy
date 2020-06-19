@@ -1,45 +1,29 @@
 package programmers;
 
-import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Map;
 import java.util.Queue;
-
-class Cache{
-	String city;
-}
 
 public class Solution_캐시 {
 	public int solution(int cacheSize, String[] cities) {
         int answer = 0;
-        
         if(cacheSize==0) {
         	return cities.length*5;
         }
         
-        Map<String, Cache> cacheMap = new HashMap<String, Cache>();
-        Queue<Cache> queue =  new LinkedList<>();
-        Cache cache;
+        Queue<String> queue =  new LinkedList<>();
         
         for(String city: cities) {
                 city = city.toLowerCase();
-        	if (cacheMap.containsKey(city)) {
+        	if (queue.contains(city)) {
         		answer += 1;
-        		cache = cacheMap.get(city);
-        		queue.remove(cache);
-        		queue.add(cache);
+        		queue.remove(city);
         	}else {
-        		if(cacheMap.size()<cacheSize) {
-        			cache = new Cache();
-        		}else {
-        			cache = queue.poll();
-        			cacheMap.remove(cache.city);
+        		if(queue.size()==cacheSize) {
+        			queue.poll();
         		}
-        		cache.city = city;
-        		queue.add(cache);
-        		cacheMap.put(city, cache);
         		answer += 5;
         	}
+        	queue.add(city);
         }
         
         return answer;
