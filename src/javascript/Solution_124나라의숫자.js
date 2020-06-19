@@ -1,17 +1,8 @@
-function getNum(n){
-    switch(n){
-        case 1:
-            return '1';
-        case 2:
-            return '2';
-        case 3:
-            return '4';
-    }
-}
-
-function getAns(n){
+function solution(n) {
+    let numbers = ['0','1','2','4'];
+    
     if(n<=3){
-        return getNum(n);
+        return numbers[n];
     }
     let pre = Math.floor(n/3);
     let now = Math.floor(n%3);
@@ -22,11 +13,7 @@ function getAns(n){
     }
     
     if(pre<=0){
-        return getNum(now);
+        return numbers[now];
     }
-    return getAns(pre)+getNum(now);
-}
-
-function solution(n) {
-    return getAns(n);
+    return solution(pre)+numbers[now];
 }
