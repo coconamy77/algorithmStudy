@@ -1,43 +1,50 @@
 package programmers;
 
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class Solution_디스크컨트롤러 {
-	static int min = 50000000;
-	static int size = 0;
-	static PriorityQueue<int[]> pq = new PriorityQueue<int[]>(new Comparator<int[]>() {
+	
+	public int solution(int[][] jobs) {
+        
+	    int size = jobs.length;
+		List<int[]> list = new ArrayList<>();		
+        for (int[] a: jobs) {
+        	list.add(a);
+        }
+		
+        Collections.sort(list, new Comparator<int[]>() {
 
 			@Override
 			public int compare(int[] o1, int[] o2) {
 				// TODO Auto-generated method stub
-				return Integer.compare(o1[0], o2[0]);
+				return Integer.compare(o1[1], o2[1]);
 			}
 		});
-	public void getSel(int start, int turn, boolean[] sel, int sum) {
-		if (sum/size>=min) {
-			return;
-		}
-		if(turn == size) {
 		
-			return;
+		int time =0;
+		int idx = 0;
+		int sum = 0;
+		
+		while(list.size()>0){
+			if (list.get(idx)[0]<=time){
+				int[] tmp = list.remove(idx);
+				time += tmp[1];
+				sum += time-tmp[0];
+				idx = 0;		
+			}else{
+				if (idx==list.size()-1){
+					time++;
+					idx = 0;
+				}else{
+					idx++;
+				}
+			}		
 		}
-		for (int i = start;;i++) {
-		}
-	}
-	
-	public int solution(int[][] jobs) {
-        int answer = 0;
-        size = jobs.length;
         
-        for (int[] a: jobs) {
-        	pq.add(a);
-        }
-        
-        getSel(0, 0, new boolean[size], 0);
         
        
         
-        return answer;
+        return sum/size;
     }
 }
+
