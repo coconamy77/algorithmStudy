@@ -71,6 +71,6 @@ class Solution_문자열압축 {
 	
 	public static void main(String[] args) {
 		Solution_문자열압축 s = new Solution_문자열압축();
-		System.out.println(s.solution("abcabcabcabcdededededede"));
+		System.out.println(s.solution("ababcdcdababcdcd"));
 	}
 }
