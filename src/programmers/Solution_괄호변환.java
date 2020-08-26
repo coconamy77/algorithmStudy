@@ -11,18 +11,21 @@ public class Solution_괄호변환 {
 	
 	public boolean check(String p) {
 		Stack<Character> stack = new Stack<Character>();
-		for (char c: p.toCharArray()) {
+		stack.push(p.charAt(0));
+		for (int i = 1; i<p.length(); i++) {
+			char c = p.charAt(i);
 			switch(c) {
 			case '(':
 				stack.push(c);
 				break;
 			case ')':
-				if (stack.pop()==c) {
+				if (stack.isEmpty() || stack.pop()==c) {
 					return false;
 				}
 				break;
 			}
 		}
+		if (!stack.isEmpty()) return false;
 		return true;
 	}
 	
