@@ -3,12 +3,7 @@ package programmers;
 import java.util.Stack;
 
 public class Solution_괄호변환 {
-	public String make(String v) {
-		String part = "";
 		
-		return part;
-	}
-	
 	public boolean check(String p) {
 		Stack<Character> stack = new Stack<Character>();
 		stack.push(p.charAt(0));
@@ -30,6 +25,7 @@ public class Solution_괄호변환 {
 	}
 	
 	public String solution(String p) {
+        //System.out.println(p);
 		String answer = "";
 		if (p.length() == 0) {
 			return answer;
@@ -70,9 +66,12 @@ public class Solution_괄호변환 {
 						}
 					}
 				}
+                break;
 			}
 		}
+        //System.out.println(answer);
 		return answer;
 	}
+
 
 }
