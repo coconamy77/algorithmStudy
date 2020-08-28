@@ -1,42 +1,39 @@
 package programmers;
 
 
-class Solution_기둥과보설치 {
-	static int[][] map;
+class Solution_기둥과보설치2 {
+	static boolean[][][] map;
 
 	public void rm(int x, int y, int w) {
-//		map[x][y][w] = false;
-//
-//		for (int i = 0; i < 4; i++) {
-//			if (map[x][y][i]) {
-//				return;
-//			}
-//		}
-//		map[x][y][4] = false;
+		map[x][y][w] = false;
+
+		for (int i = 0; i < 4; i++) {
+			if (map[x][y][i]) {
+				return;
+			}
+		}
+		map[x][y][4] = false;
 	}
 
 	public boolean check(int x, int y, int w) {
 		// w==1->보, 0->기둥
 
 		if (w == 0) {
-			//기둥일 때 
-			if (x != 0 && map[x][y]==0) {
-				//바닥이 아니고 아무것도 없는 경우 불가능
+			if (x != 0 && !map[x][y][4]) {
 				return false;
 			}
 			return true;
 		} else {
-			//보일 때 
-			if ((map[x][y]&4)==4|| (map[x][y+1]&4)==4) {
-				//양쪽끝에 기둥이 있을 경우 0100
+			if (map[x][y][3]) {
 				return true;
 			}
-			if (map[x][y+1]==0) {
-				//오른쪽에 아무것도 없을경우(보가 있다면 밑에서 양쪽 보인지 확인, 기둥이 있다면 이미 세울 수 있는 조건) 불가능
+			if (!map[x][y + 1][4]) {
 				return false;
 			}
-			if ((map[x][y]&1)==1) {
-				//보가 있는지 확인
+			if (map[x][y + 1][3]) {
+				return true;
+			}
+			if (map[x][y][1] && map[x][y + 1][0]) {
 				return true;
 			}
 		}
@@ -44,7 +41,7 @@ class Solution_기둥과보설치 {
 	}
 
 	public int[][] solution(int n, int[][] build_frame) {
-		map = new int[n + 1][n + 1];
+		map = new boolean[n + 1][n + 1][5];
 		int x, y, a, b;
 		boolean rmb;
 		int cnt = 0;
@@ -54,24 +51,23 @@ class Solution_기둥과보설치 {
 			a = arr[2];// 0==기둥, 1==보
 			b = arr[3];// 0==삭제, 1==설치
 
-			//위기, 아기, 왼보, 오보
+			// 왼보, 오보, 위기, 아기
 			if (b == 1) {
 				if (check(x, y, a)) {
 					cnt++;
+					map[x][y][4] = true;
 					if (a == 0) {
-						//기둥일때
-						map[x][y] |= 8;
-						map[x+1][y] |= 4;
+						map[x][y][2] = true;
+						map[x + 1][y][4] = true;
+						map[x + 1][y][3] = true;
 					} else {
-						//보일때
-						map[x][y] |= 2;
-						map[x][y+1] |=1;
+						map[x][y][0] = true;
+						map[x][y + 1][4] = true;
+						map[x][y + 1][1] = true;
 					}
 				}
 			} else {
-				//삭제!
 				if (a == 0) {
-					//기둥일때
 					cnt--;
 					rm(x, y, 2);
 					rm(x + 1, y, 3);
@@ -181,7 +177,7 @@ class Solution_기둥과보설치 {
 	}
 	
 	public static void main(String[] args) {
-		Solution_기둥과보설치 s = new Solution_기둥과보설치();
+		Solution_기둥과보설치2 s = new Solution_기둥과보설치2();
 		s.solution(5,new int[][] {{1,0,0,1},{1,1,1,1},{2,1,0,1},{2,2,1,1},{5,0,0,1},{5,1,0,1},{4,2,1,1},{3,2,1,1}});
 		
 		
