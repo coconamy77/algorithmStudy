@@ -4,17 +4,6 @@ package programmers;
 class Solution_기둥과보설치 {
 	static int[][] map;
 
-	public void rm(int x, int y, int w) {
-//		map[x][y][w] = false;
-//
-//		for (int i = 0; i < 4; i++) {
-//			if (map[x][y][i]) {
-//				return;
-//			}
-//		}
-//		map[x][y][4] = false;
-	}
-
 	public boolean check(int x, int y, int w) {
 		// w==1->보, 0->기둥
 
@@ -73,30 +62,38 @@ class Solution_기둥과보설치 {
 				if (a == 0) {
 					//기둥일때
 					cnt--;
-					rm(x, y, 2);
-					rm(x + 1, y, 3);
+					map[x][y] &= 8;
+					map[x+1][y] &= 4;
 					rmb = true;
-					for (int i = 0; i < 3; i++) {
-						if (map[x+1][y][i]) {
-							if (i == 0) {
-								if (!check(x+1, y, 1)) {
-									rmb = false;
-									
-									break;
-								}
-							}else if (i==1) {
-								if (!check(x+1, y-1, i)) {
-									rmb = false;
-									break;
-								}
-							}else if(i==2) {
-								if (!check(x+1,y,i)) {
-									rmb = false;
-									break;
-								}
-							}
+					
+					for (int i = 1; i<=8; i <<=1) {
+						if((map[x+1][y]&i)==i) {
+							
 						}
 					}
+					
+//					for (int i = 0; i < 3; i++) {
+						
+//						if (map[x+1][y][i]) {
+//							if (i == 0) {
+//								if (!check(x+1, y, 1)) {
+//									rmb = false;
+//									
+//									break;
+//								}
+//							}else if (i==1) {
+//								if (!check(x+1, y-1, i)) {
+//									rmb = false;
+//									break;
+//								}
+//							}else if(i==2) {
+//								if (!check(x+1,y,i)) {
+//									rmb = false;
+//									break;
+//								}
+//							}
+//						}
+//					}
 					if (!rmb) {
 						cnt++;
 						map[x][y][4] = true;
