@@ -94,86 +94,87 @@ class Solution_기둥과보설치 {
 //							}
 //						}
 //					}
-					if (!rmb) {
-						cnt++;
-						map[x][y][4] = true;
-						map[x][y][2] = true;
-						map[x + 1][y][4] = true;
-						map[x + 1][y][3] = true;
-					}
-				}else {
-					//보를 삭제!
-					cnt--;
-					rm(x, y, 0);
-					rm(x, y+1, 1);
-					rmb = true;
-					
-					//0체크!
-					for (int i = 1; i < 3; i++) {
-						if (map[x][y][i]) {
-							if (i == 1) {
-								if (!check(x+1, y, i)) {
-									rmb = false;
-									break;
-								}
-							}else if (i==1) {
-								if (!check(x+1, y-1, i)) {
-									rmb = false;
-									break;
-								}
-							}else if(i==2) {
-								if (!check(x+1,y,i)) {
-									rmb = false;
-									break;
-								}
-							}
-						}
-					}
-					if (!rmb) {
-						cnt++;
-						map[x][y][4] = true;
-						map[x][y][2] = true;
-						map[x + 1][y][4] = true;
-						map[x + 1][y][3] = true;
-					}
+//					if (!rmb) {
+//						cnt++;
+//						map[x][y][4] = true;
+//						map[x][y][2] = true;
+//						map[x + 1][y][4] = true;
+//						map[x + 1][y][3] = true;
+//					}
 				}
+//					else {
+//					//보를 삭제!
+//					cnt--;
+//					rm(x, y, 0);
+//					rm(x, y+1, 1);
+//					rmb = true;
+//					
+//					//0체크!
+//					for (int i = 1; i < 3; i++) {
+//						if (map[x][y][i]) {
+//							if (i == 1) {
+//								if (!check(x+1, y, i)) {
+//									rmb = false;
+//									break;
+//								}
+//							}else if (i==1) {
+//								if (!check(x+1, y-1, i)) {
+//									rmb = false;
+//									break;
+//								}
+//							}else if(i==2) {
+//								if (!check(x+1,y,i)) {
+//									rmb = false;
+//									break;
+//								}
+//							}
+//						}
+//					}
+//					if (!rmb) {
+//						cnt++;
+//						map[x][y][4] = true;
+//						map[x][y][2] = true;
+//						map[x + 1][y][4] = true;
+//						map[x + 1][y][3] = true;
+//					}
+//				}
 			}
 
 		}
 		
 		int[][] answer = new int[cnt][3];
-		int idx = 0;
-		for (int i = 0; i<n+1; i++) {
-			for (int j = 0; j<n+1; j++) {
-				if (map[j][i][4]) {
-					if (map[j][i][2]) {
-						answer[idx][0] = i;
-						answer[idx][1] = j;
-						answer[idx++][2] = 0;
-						//System.out.print(0);
-					}
-					if (map[j][i][0]) {
-						answer[idx][0] = i;
-						answer[idx][1] = j;
-						answer[idx++][2] = 1;
-						//System.out.print(1);
-					}
-				}
-//				else {
-//					System.out.print("-");
+//		int idx = 0;
+//		for (int i = 0; i<n+1; i++) {
+//			for (int j = 0; j<n+1; j++) {
+//				if (map[j][i][4]) {
+//					if (map[j][i][2]) {
+//						answer[idx][0] = i;
+//						answer[idx][1] = j;
+//						answer[idx++][2] = 0;
+//						//System.out.print(0);
+//					}
+//					if (map[j][i][0]) {
+//						answer[idx][0] = i;
+//						answer[idx][1] = j;
+//						answer[idx++][2] = 1;
+//						//System.out.print(1);
+//					}
 //				}
-				if(cnt==idx) {
-					return answer;
-				}
-			}
-			//System.out.println();
-		}
+////				else {
+////					System.out.print("-");
+////				}
+//				if(cnt==idx) {
+//					return answer;
+//				}
+//			}
+//			//System.out.println();
+//		}
 //		System.out.print("[");
 //		for (int i = 0; i<cnt; i++) {
 //			System.out.print("["+answer[i][0]+", "+answer[i][1]+", "+answer[i][2]+"], ");
 //		}
 //		System.out.println("]");
-
+		
 		return answer;
 	}
 	
