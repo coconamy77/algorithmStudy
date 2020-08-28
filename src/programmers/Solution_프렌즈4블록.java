@@ -1,6 +1,6 @@
 package programmers;
 
-public class Solution_프론즈4블록 {
+public class Solution_프렌즈4블록 {
 
 	public int check(int i, int j, String[] board, boolean[][] vst) {
 		char tmp = board[i].charAt(j);
@@ -8,19 +8,22 @@ public class Solution_프론즈4블록 {
 		if (board[i].charAt(j + 1) == tmp) {
 			if (board[i + 1].charAt(j) == tmp) {
 				if (board[i + 1].charAt(j + 1) == tmp) {
+					System.out.println(tmp);
 					if (!vst[i][j]) {
-						vst[i++][j] = true;
+						vst[i][j] = true;
 						cnt++;
 					}
-
+					i++;
 					if (!vst[i][j]) {
-						vst[i][j++] = true;
+						vst[i][j] = true;
 						cnt++;
 					}
+					j++;
 					if (!vst[i][j]) {
-						vst[i--][j] = true;
+						vst[i][j] = true;
 						cnt++;
 					}
+					i--;
 					if (!vst[i][j]) {
 						vst[i][j] = true;
 						cnt++;
@@ -40,28 +43,40 @@ public class Solution_프론즈4블록 {
 		}
 
 		int bottom = 0;
+		
+		for (int i =0; i<m; i++) {
+			for (int j =0; j<n; j++) {
+				if (vst[i][j]) {
+					System.out.print(1);
+				}else {
+					System.out.print(0);
+				}
+			}
+			System.out.println();
+		}
 
 		for (int j = 0; j < n; j++) {
 			int i = m-1;
+			bottom = 0;
 			for (; i >= 0; i--) {
 				if (b[i][j] != '-') {
 					if (vst[i][j]) {
 						bottom = bottom < i ? i : bottom;
 					} else {
 						b[bottom][j] = b[i][j];
-						bottom++;
+						bottom--;
 					}
 				} else {
 					break;
 				}
 			}
-			while(bottom<i) {
-				b[bottom][j] = '-';
+			while(bottom>i) {
+				b[bottom--][j] = '-';
 			}
 		}
 		
 		for (int i = 0;i<m; i++) {
-			board[i] = b[i].toString();
+			board[i] = String.copyValueOf(b[i]);
 		}
 	}
 
@@ -79,14 +94,28 @@ public class Solution_프론즈4블록 {
 						continue;
 					}
 					removed += check(i, j, board, vst);
+					System.out.println(removed);
 
 				}
 			}
+			if (removed==0) {
+				break;
+			}
 			remove(m, n, board, vst);
+			for (String s: board) {
+				System.out.println(s);
+			}
 			answer += removed;
+			removed = 0;
 		}
 
 		return answer;
+	}
+	
+	public static void main(String[] args) {
+		
+		Solution_프렌즈4블록 s = new Solution_프렌즈4블록();
+		System.out.println(s.solution(4, 5, new String[] {"CCBDE", "AAADE", "AAABF", "CCBBF"}));
 	}
 
 }
