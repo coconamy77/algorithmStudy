@@ -8,7 +8,7 @@ public class Solution_프렌즈4블록 {
 		if (board[i].charAt(j + 1) == tmp) {
 			if (board[i + 1].charAt(j) == tmp) {
 				if (board[i + 1].charAt(j + 1) == tmp) {
-					System.out.println(tmp);
+					//System.out.println(tmp);
 					if (!vst[i][j]) {
 						vst[i][j] = true;
 						cnt++;
@@ -44,25 +44,25 @@ public class Solution_프렌즈4블록 {
 
 		int bottom = 0;
 		
-		for (int i =0; i<m; i++) {
-			for (int j =0; j<n; j++) {
-				if (vst[i][j]) {
-					System.out.print(1);
-				}else {
-					System.out.print(0);
-				}
-			}
-			System.out.println();
-		}
+//		for (int i =0; i<m; i++) {
+//			for (int j =0; j<n; j++) {
+//				if (vst[i][j]) {
+//					System.out.print(1);
+//				}else {
+//					System.out.print(0);
+//				}
+//			}
+//			System.out.println();
+//		}
 
 		for (int j = 0; j < n; j++) {
 			int i = m-1;
-			bottom = 0;
+			bottom = -1;
 			for (; i >= 0; i--) {
 				if (b[i][j] != '-') {
 					if (vst[i][j]) {
 						bottom = bottom < i ? i : bottom;
-					} else {
+					} else if (bottom>=0){
 						b[bottom][j] = b[i][j];
 						bottom--;
 					}
@@ -70,6 +70,7 @@ public class Solution_프렌즈4블록 {
 					break;
 				}
 			}
+			//System.out.println(i);
 			while(bottom>i) {
 				b[bottom--][j] = '-';
 			}
@@ -94,7 +95,7 @@ public class Solution_프렌즈4블록 {
 						continue;
 					}
 					removed += check(i, j, board, vst);
-					System.out.println(removed);
+					//System.out.println(removed);
 
 				}
 			}
@@ -102,11 +103,11 @@ public class Solution_프렌즈4블록 {
 				break;
 			}
 			remove(m, n, board, vst);
-			for (String s: board) {
-				System.out.println(s);
-			}
+//			for (String s: board) {
+//				System.out.println(s);
+//			}
 			answer += removed;
-			removed = 0;
+			
 		}
 
 		return answer;
