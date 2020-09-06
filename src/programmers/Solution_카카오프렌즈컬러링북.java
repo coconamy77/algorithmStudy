@@ -1,6 +1,8 @@
+package programmers;
+
 import java.util.*;
 
-class Solution {
+class Solution_카카오프렌즈컬러링북 {
        public int[] solution(int m, int n, int[][] picture) {
         int numberOfArea = 0;
         int maxSizeOfOneArea = 0;

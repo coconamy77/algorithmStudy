@@ -1,6 +1,9 @@
-class Solution {
+package programmers;
+
+class Solution_외벽점검 {
     public int sel(int dept, int[] weak, int[] dist){
         //for (int i =0; i<)    
+    	return 0;
     }
     
     public int getMin(int n, int[] weak, int[] dist){
@@ -8,6 +11,7 @@ class Solution {
         for (int i = 0; i<dist.length; i++){
             
         }
+        return 0;
 	}
 	
     
