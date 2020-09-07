@@ -37,8 +37,6 @@ class Solution_카카오프렌즈컬러링북 {
 								q.add(nx*10000+ny);
 							}
 						}
-						
-						
 					}
 					
 					maxSizeOfOneArea = maxSizeOfOneArea>tmpArea?maxSizeOfOneArea:tmpArea;
