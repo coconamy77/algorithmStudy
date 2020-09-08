@@ -34,6 +34,9 @@ public class Solution_뉴스클러스터링 {
 		if (set1.size() + set2.size() == 0) {
 			return 1;
 		}
+		if (set1.size()*set2.size()==0){
+            return 0;
+        }
 
 		int c1 = 0, c2 = 0;
 		int compare = 0;
