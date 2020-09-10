@@ -10,6 +10,10 @@ class Solution_보석쇼핑 {
         List<String> list = new ArrayList<>();
         list.add(gems[0]);
         int last = 0,first = 0;
+        
+        
+        
+        
         for (int i = 1; i<gems.length; i++) {
         	if(!list.contains(gems[i])) {
         		while(last<i) {
