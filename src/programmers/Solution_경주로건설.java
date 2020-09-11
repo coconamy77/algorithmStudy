@@ -1,45 +1,38 @@
 package programmers;
+import java.util.Arrays;
 
 public class Solution_경주로건설 {
-	
-	int[] dx = {0,0,1,-1};
-	int[] dy = {1,-1,0,0};
-	//->,<-,ㅜ,^
-	
-	public void dfs(int x, int y, int w, int[][] b) {
-		int now = b[x][y];
-		int tmp;
-		for (int d = 0; d<4; d++) {
-			int nx = x+dx[d];
-			int ny = y+dy[d];
-			
-			if (w==d) {
-				tmp = now+100;
-			}else {
-				tmp = now+600;
-			}
-			
-			if (nx>=0 && ny>=0 && nx<b.length && ny<b.length && b[nx][ny]!=1 && (b[nx][ny]==0||b[nx][ny]>tmp)){
-				b[nx][ny] = tmp;
-				dfs(nx, ny, d, b);
-			}
-			
-		}
-		
-	}
 
-	public int solution(int[][] board) {
-        
-        
-        //dfs(0,0,0,board);
-        int nx, ny;
-        
-        dfs(1,0,2,board);
-        for (int d = 0; d<4; d++) {
-        	
-        	dfs(0,0,d,board);
-        }
-        
-        return board[board.length][board.length];
-    }
-}
+   static int board2[][];
+   static int dx[] = {0, 0, 1, -1};
+   static int dy[] = {1, -1, 0, 0};
+   static int nx, ny;
+   static int plusScore;
+   static int length;
+   public static void DFS(int x, int y, int direction) {
+   
+      for(int i=0; i<4; i++) {
+         nx = dx[i]+x;
+         ny = dy[i]+y;
+         if(direction==i) {
+            plusScore=100;
+         }else {
+            plusScore=600;
+         }
+         if(nx>=0 && ny>=0 && nx<board2.length && ny<board2.length && board2[nx][ny]!=1 
+               && (board2[nx][ny]>=board2[x][y]+plusScore || board2[nx][ny]==0) && (nx!=0 || ny!=0)) {
+            board2[nx][ny]=board2[x][y]+plusScore;
+            DFS(nx, ny, i);
+         }
+      }
+   }
+   
+      public int solution(int[][] board) {
+         board2= board;
+         length=board2.length;
+            for(int i=0; i<4; i++){
+             DFS(0, 0, i);
+            }
+         return board2[length-1][length-1];
+      }
+   }
