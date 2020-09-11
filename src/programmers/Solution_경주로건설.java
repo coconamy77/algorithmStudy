@@ -1,5 +1,4 @@
 package programmers;
-import java.util.Arrays;
 
 public class Solution_경주로건설 {
 
