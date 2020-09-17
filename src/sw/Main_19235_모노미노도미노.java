@@ -7,6 +7,8 @@ import java.util.StringTokenizer;
 public class Main_19235_모노미노도미노 {
 	static int score = 0;
 	static int[][][] map;
+	static int rx = 0;
+
 	public static void newB(int mapnum, int type, int y) {
 		int x = 1;
 		if (type == 1) {
@@ -27,10 +29,10 @@ public class Main_19235_모노미노도미노 {
 			map[mapnum][x][y] = 1;
 			map[mapnum][x + 1][y] = 1;
 		}
-//		System.out.println("map: "+mapnum);
-//		for (int i = 0; i<6;i++) {
-//			for (int j = 0; j<4; j++) {
-//				System.out.print(map[mapnum][i][j]+" ");
+//		System.out.println("map: " + mapnum);
+//		for (int i = 0; i < 6; i++) {
+//			for (int j = 0; j < 4; j++) {
+//				System.out.print(map[mapnum][i][j] + " ");
 //			}
 //			System.out.println();
 //		}
@@ -38,15 +40,15 @@ public class Main_19235_모노미노도미노 {
 		while (check(mapnum)) {
 			goDown(mapnum, 5);
 //			System.out.println("여기는 while문");
-//			System.out.println("map: "+mapnum);
-//			for (int i = 0; i<6;i++) {
-//				for (int j = 0; j<4; j++) {
-//					System.out.print(map[mapnum][i][j]+" ");
+//			System.out.println("map: " + mapnum);
+//			for (int i = 0; i < 6; i++) {
+//				for (int j = 0; j < 4; j++) {
+//					System.out.print(map[mapnum][i][j] + " ");
 //				}
 //				System.out.println();
 //			}
 //			System.out.println("여기까지 while문");
-			
+
 		}
 		goDown(mapnum, checklast(mapnum));
 
@@ -64,17 +66,17 @@ public class Main_19235_모노미노도미노 {
 				map[mapnum][0][y] = 0;
 				map[mapnum][1][y] = 0;
 			}
-//			System.out.println("map: "+mapnum);
-//			for (int i = 0; i<6;i++) {
-//				for (int j = 0; j<4; j++) {
-//					System.out.print(map[mapnum][i][j]+" ");
+//			System.out.println("map: " + mapnum);
+//			for (int i = 0; i < 6; i++) {
+//				for (int j = 0; j < 4; j++) {
+//					System.out.print(map[mapnum][i][j] + " ");
 //				}
 //				System.out.println();
 //			}
 //			System.out.println();
 		} else {
-			int nx = dx;
-			for (int x = dx - 1; x > 0; x--) {
+			int nx = rx;
+			for (int x = rx - 1; x > 0; x--) {
 				for (int y = 0; y < 4; y++) {
 					if (map[mapnum][x][y] == 1) {
 						nx = getnx(mapnum, x, y);
@@ -83,7 +85,7 @@ public class Main_19235_모노미노도미노 {
 					} else if (map[mapnum][x][y] == 21) {
 						nx = Math.min(getnx(mapnum, x, y), getnx(mapnum, x, y + 1));
 						map[mapnum][nx][y] = map[mapnum][x][y];
-						map[mapnum][nx][y + 1] = map[mapnum][x][y+1];
+						map[mapnum][nx][y + 1] = map[mapnum][x][y + 1];
 						map[mapnum][x][y] = 0;
 						map[mapnum][x][++y] = 0;
 					}
@@ -93,8 +95,8 @@ public class Main_19235_모노미노도미노 {
 	}
 
 	public static int getnx(int mapnum, int x, int y) {
-		int nx = x+1;
-		while (nx<6 && map[mapnum][nx][y] == 0) {
+		int nx = x + 1;
+		while (nx < 6 && map[mapnum][nx][y] == 0) {
 			nx++;
 		}
 		return nx - 1;
@@ -122,8 +124,8 @@ public class Main_19235_모노미노도미노 {
 	}
 
 	public static boolean check(int mapnum) {
-		boolean full,check = false;
-		for (int x = 5; x >= 0; x--) {
+		boolean full, check = false;
+		for (int x = 2; x < 6; x++) {
 			full = true;
 			for (int y = 0; y < 4; y++) {
 				if (map[mapnum][x][y] == 0) {
@@ -131,6 +133,7 @@ public class Main_19235_모노미노도미노 {
 				}
 			}
 			if (full) {
+				rx = x;
 				check = true;
 				score++;
 				for (int y = 0; y < 4; y++) {
@@ -145,7 +148,7 @@ public class Main_19235_모노미노도미노 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 
-		 map = new int[2][6][4];
+		map = new int[2][6][4];
 
 		int N = Integer.parseInt(st.nextToken());
 
