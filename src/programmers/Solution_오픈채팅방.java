@@ -41,6 +41,7 @@ public class Solution_오픈채팅방 {
          }
       }
       
+      
       return answer;
    }
 }
