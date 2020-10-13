@@ -52,7 +52,27 @@ public class Main_19235_모노미노도미노 {
 				}
 			}
 		}else {
-			
+			for(int y = 0; y<4; y++) {
+				int empty = 1;
+				for (int x = 5; x>=0; x++) {
+					if (map[x][y]==0) {
+						while(x-empty>=0 && map[x-empty][y]==0) {
+							empty++;
+						}
+						if (x-empty==-1) {
+							break;
+						}
+						switch(map[x-empty][y]) {
+						case 1:
+							map[x][y] = map[x-empty][y];
+							map[x-empty][y] = 0;
+							break;
+						case 21:
+							
+						}
+					}
+				}
+			}
 		}
 	}
 	public static int checklast(int[][] map) {
