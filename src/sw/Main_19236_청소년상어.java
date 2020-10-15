@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+
+
 class Fish {
 	int name;
 	int dir;
@@ -120,7 +122,7 @@ public class Main_19236_청소년상어 {
 	}
 
 	static void moveFish() {
-//		System.out.println("물고기 움직여");
+		System.out.println("물고기 움직여");
 		Fish f;
 		int ox, oy, nx, ny;
 		for (int i = 1; i < 17; i++) {
@@ -139,8 +141,8 @@ public class Main_19236_청소년상어 {
 			}
 			map[nx][ny] = f;
 		}
-//		System.out.print("물고기 움직여따아=======>");
-//		print(fish);
+		System.out.print("물고기 움직여따아=======>");
+		print(fish);
 	}
 
 	public static int movable() {
@@ -153,7 +155,9 @@ public class Main_19236_청소년상어 {
 			if (!range(nx, ny)) {
 				return m;
 			}
-			m++;
+			if (map[nx][ny]!=null) {
+				m++;
+			}
 		}
 		return m;
 	}
@@ -189,15 +193,15 @@ public class Main_19236_청소년상어 {
 			if (sum > answer) {
 				answer = sum;
 			}
-//			System.out.println("답인가?! ->" + answer);
+			System.out.println("답인가?! ->" + answer);
 			return;
 		}
 		Fish[][] tmp = new Fish[4][4];
 		Fish[] tmpfish = new Fish[17];
 		copyFish(fish, tmpfish);
 		copymap(map, tmp, tmpfish);
-//		System.out.println("복사했엉~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  " + sx
-//				+ " " + sy);
+		System.out.println("복사했엉~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  " + sx
+				+ " " + sy);
 //		print(fish);
 		int ox = sx, oy = sy, od = sd;
 		int tmpval = 0;
@@ -213,23 +217,21 @@ public class Main_19236_청소년상어 {
 			if (map[sx][sy] == null) {
 				sx = ox;
 				sy = oy;
-
 				continue;
 			}
-//			System.out.println("상어위치 " + ox + " " + oy + " -> " + sx + " " + sy);
+			System.out.println("상어위치 " + ox + " " + oy + " -> " + sx + " " + sy);
 			tmpval = moveShark(ox, oy);
-			// print(fish);
 			moveFish();
 			getAnswer(sum + tmpval);
 			sx = ox;
 			sy = oy;
 			sd = od;
-//			System.out.println("이걸 복사 할것이다 ==============>" + sx + " " + sy);
-//			print(tmpfish);
+			System.out.println("이걸 복사 할것이다 ==============>" + sx + " " + sy);
+			print(tmpfish);
 			copyFish(tmpfish, fish);
 			copymap(tmp, map, fish);
-//			System.out.println("백트레킹~ " + sx + " " + sy);
-//			print(fish);
+			System.out.println("백트레킹~ " + sx + " " + sy);
+			print(fish);
 		}
 	}
 
@@ -268,7 +270,7 @@ public class Main_19236_청소년상어 {
 		map[0][0] = fish[0];
 		fish[answer] = null;
 		moveFish();
-//		print(fish);
+		print(fish);
 
 		getAnswer(answer);
 
