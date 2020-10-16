@@ -203,7 +203,31 @@ public class Main_19238_스타트택시 {
 
 		int[] nearest;// {손님 번호, 거리}
 		int tmpf = 0;
-		
+		while (M > 0 && fuel > 0) {
+			System.out.println(fuel);
+			nearest = findCus();
+			
+			if (fuel==-1) {
+				fuel = -1;
+				break;
+			}
+			tmpf= nearest[1];
+			System.out.println("가까운 손님 =>"+(nearest[0]-1)+" 거리==>"+tmpf);
+			fuel -= tmpf;
+			
+			tx = cus[nearest[0]].ox;
+			ty = cus[nearest[0]].oy;
+			System.out.println("현재: "+fuel);
+			tmpf = go(nearest[0]);
+			System.out.println("도착해쓰요 "+tmpf);
+			if (tmpf==-1) {
+				fuel = -1;
+				break;
+			}
+			fuel = fuel-tmpf+tmpf*2;
+			System.out.println("현재 "+fuel);
+			M--;
+		}
 
 		if (M > 0 && fuel == 0) {
 			fuel = -1;
