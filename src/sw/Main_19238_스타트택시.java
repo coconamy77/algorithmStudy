@@ -24,7 +24,7 @@ class Customer {
 
 public class Main_19238_스타트택시 {
 
-	static int[][][] map;//출발, 도착
+	static int[][] map;//출발, 도착
 	static int N, M, fuel;
 	static Customer[] cus;
 	static int tx, ty;
@@ -47,7 +47,7 @@ public class Main_19238_스타트택시 {
 			ty = tmp[2];
 			//System.out.println("위치 : 	"+tx+" "+ty);
 
-			if (map[0][tx][ty] > 1) {
+			if (map[tx][ty] > 1) {
 				dis = tmp[0];
 				//System.out.println("???????????????????");
 				while (!q.isEmpty()) {
@@ -58,7 +58,7 @@ public class Main_19238_스타트택시 {
 					}
 					nx = tmp[1];
 					ny = tmp[2];
-					if (map[0][nx][ny] > 1) {
+					if (map[nx][ny] > 1) {
 						if (nx < tx) {
 							tx = nx;
 							ty = ny;
@@ -70,8 +70,8 @@ public class Main_19238_스타트택시 {
 						}
 					}
 				}
-				cus = map[0][tx][ty];
-				map[0][tx][ty] = 0;
+				cus = map[tx][ty];
+				map[tx][ty] = 0;
 				//System.out.println("여기는 처음!!! "+cus+ " "+dis  );
 				return new int[] {cus,dis};
 			} else {
@@ -88,7 +88,7 @@ public class Main_19238_스타트택시 {
 					nx = tx + dx[d];
 					ny = ty + dy[d];
 					//System.out.println("왜애애애애애ㅐ앵 : "+nx+" "+ny);
-					if (map[0][nx][ny] != 1 && !vst[nx][ny]) {
+					if (map[nx][ny] != 1 && !vst[nx][ny]) {
 						vst[nx][ny] = true;
 						//System.out.println("추가 : "+nx+" "+ny);
 						q.add(new int[] { dis+1, nx, ny });
@@ -102,7 +102,7 @@ public class Main_19238_스타트택시 {
 		return new int[] { cus, dis };
 	}
 	
-	public static int go(int cus) {
+	public static int go(int cx, int cy) {
 		//System.out.println("손님 태워 출발~~~~~~~~``");
 		int dis = 0;
 		Queue<int[]> q = new LinkedList<>();
@@ -116,7 +116,7 @@ public class Main_19238_스타트택시 {
 			tmp = q.poll();
 			tmpx = tmp[1];
 			tmpy = tmp[2];
-			System.out.println("위치 : "+tmpx+" "+tmpy);
+			//System.out.println("위치 : "+tmpx+" "+tmpy);
 			if (tmp[0] != dis) {
 				dis++;
 				if (dis>=fuel) {
@@ -127,16 +127,16 @@ public class Main_19238_스타트택시 {
 				nx = tmpx + dx[d];
 				ny = tmpy + dy[d];
 				
-				if (map[1][nx][ny] != 1 && !vst[nx][ny]) {
+				if (map[nx][ny] != 1 && !vst[nx][ny]) {
 					//System.out.println("지금 여기 값이 뭔데? "+map[1][nx][ny]);
-					if (map[1][nx][ny]==cus) {
+					if (nx==cx && ny ==cy) {
 						tx = nx;
 						ty = ny;
 						//map[1][nx][ny] = 0;
 						return dis+1;
 					}
 					vst[nx][ny] = true;
-					System.out.println("추가: "+nx+" "+ny+" "+dis);
+					//System.out.println("추가: "+nx+" "+ny+" "+dis);
 					q.add(new int[] { dis+1, nx, ny });
 				}
 			}
@@ -153,29 +153,24 @@ public class Main_19238_스타트택시 {
 		M = Integer.parseInt(st.nextToken());
 		fuel = Integer.parseInt(st.nextToken());
 
-		map = new int[2][N + 2][N + 2];
+		map = new int[N + 2][N + 2];
 		cus = new Customer[M + 2];
 
 		for (int j = 0; j < N + 2; j++) {
-			map[0][0][j] = 1;
-			map[1][0][j] = 1;
+			map[0][j] = 1;
 		}
 
 		for (int i = 1; i < N + 1; i++) {
-			map[0][i][0] = 1;
-			map[1][i][0] = 1;
+			map[i][0] = 1;
 			st = new StringTokenizer(br.readLine());
 			for (int j = 1; j < N + 1; j++) {
-				map[0][i][j] = Integer.parseInt(st.nextToken());
-				map[1][i][j] = map[0][i][j];
+				map[i][j] = Integer.parseInt(st.nextToken());
 			}
-			map[0][i][N + 1] = 1;
-			map[1][i][N + 1] = 1;
+			map[i][N + 1] = 1;
 		}
 
 		for (int j = 0; j < N + 2; j++) {
-			map[0][N + 1][j] = 1;
-			map[1][N + 1][j] = 1;
+			map[N + 1][j] = 1;
 		}
 
 		st = new StringTokenizer(br.readLine());
@@ -190,8 +185,7 @@ public class Main_19238_스타트택시 {
 			ny = Integer.parseInt(st.nextToken());
 			cus[i] = new Customer(i, ox, oy, nx, ny);
 
-			map[0][ox][oy] = i;
-			map[1][nx][ny] = i;
+			map[ox][oy] = i;
 		}
 
 //		for (int i =0; i<N+2; i++) {
@@ -204,7 +198,7 @@ public class Main_19238_스타트택시 {
 		int[] nearest;// {손님 번호, 거리}
 		int tmpf = 0;
 		while (M > 0 && fuel > 0) {
-			System.out.println(fuel);
+			//System.out.println(fuel);
 			nearest = findCus();
 			
 			if (fuel==-1) {
@@ -212,20 +206,20 @@ public class Main_19238_스타트택시 {
 				break;
 			}
 			tmpf= nearest[1];
-			System.out.println("가까운 손님 =>"+(nearest[0]-1)+" 거리==>"+tmpf);
+			//System.out.println("가까운 손님 =>"+(nearest[0]-1)+" 거리==>"+tmpf);
 			fuel -= tmpf;
 			
 			tx = cus[nearest[0]].ox;
 			ty = cus[nearest[0]].oy;
-			System.out.println("현재: "+fuel);
-			tmpf = go(nearest[0]);
-			System.out.println("도착해쓰요 "+tmpf);
+			//System.out.println("현재: "+fuel);
+			tmpf = go(cus[nearest[0]].nx, cus[nearest[0]].ny);
+			//System.out.println("도착해쓰요 "+tmpf);
 			if (tmpf==-1) {
 				fuel = -1;
 				break;
 			}
 			fuel = fuel-tmpf+tmpf*2;
-			System.out.println("현재 "+fuel);
+			//System.out.println("현재 "+fuel);
 			M--;
 		}
 
