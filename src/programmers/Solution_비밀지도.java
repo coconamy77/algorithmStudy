@@ -19,7 +19,6 @@ public class Solution_비밀지도 {
         
         for(int i = 0; i<n; i++){
             int number = arr1[i] | arr2[i];
-            System.out.println(number);
             answer[i] = getAnswer(number,n);
         }
         
