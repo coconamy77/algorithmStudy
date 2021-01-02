@@ -35,7 +35,7 @@ class Solution_기둥과보설치 {
 	public int[][] solution(int n, int[][] build_frame) {
 		map = new int[n + 1][n + 1];
 		int x, y, a, b;
-		boolean rmb;
+		boolean rmb = false;
 		int cnt = 0;
 		for (int[] arr : build_frame) {
 			x = arr[1];
@@ -65,7 +65,9 @@ class Solution_기둥과보설치 {
 					map[x][y] &= 8;
 					map[x+1][y] &= 4;
 					rmb = true;
-					
+					if(rmb) {
+						
+					}
 					for (int i = 1; i<=8; i <<=1) {
 						if((map[x+1][y]&i)==i) {
 							

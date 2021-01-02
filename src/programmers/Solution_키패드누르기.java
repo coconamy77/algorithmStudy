@@ -3,7 +3,6 @@ package programmers;
 class Solution_키패드누르기 {
 	public int getD(int now, int goal) {
 		int d = 0;
-		int nowRow = now % 3;
 		if (now % 3 != 2) {
 			d += 1;
 		}

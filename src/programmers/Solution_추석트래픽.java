@@ -14,7 +14,7 @@ public class Solution_추석트래픽 {
         	st.nextToken();
         	
         	time = st.nextToken().split(":");
-        	
+        	System.out.println(time);
         }
         
         return answer;
