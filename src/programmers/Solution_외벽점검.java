@@ -7,7 +7,7 @@ class Solution_외벽점검 {
     }
     
     public int getMin(int n, int[] weak, int[] dist){
-		int j = dist.length-1;
+		//int j = dist.length-1;
         for (int i = 0; i<dist.length; i++){
             
         }
@@ -20,7 +20,7 @@ class Solution_외벽점검 {
        int answer = -1;
        int max = weak.length>dist.length?dist.length:weak.length;
         int min = 1;
-        int tmp = 0;
+       // int tmp = 0;
        while(max!=min){
           answer = max/2;
            

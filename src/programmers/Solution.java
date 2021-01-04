@@ -5,7 +5,6 @@ class Solution {
 	        int answer = 1;
 	        int idx = 0;
 	        int now = truck_weights[idx];
-	        int first = 0;
 	        int cnt = 1;
 	        int fin = (bridge_length-1)*-1;
 	        while(idx<truck_weights.length) {

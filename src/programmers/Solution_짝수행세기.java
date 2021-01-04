@@ -22,7 +22,7 @@ class Solution_짝수행세기 {
             }
         }
         int R = a.length;
-        int C = a[0].length;
+        //int C = a[0].length;
         int[][] evenCountArr = new int[2][a.length+1];
         evenCountArr[0][R-col[0]] = combi[R][col[0]];
 
