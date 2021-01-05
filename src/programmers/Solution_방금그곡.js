@@ -1,13 +1,12 @@
 function Music(start, end, title, notes){
-    this.time = getTime(end)-getTime(start);
-    this.notes = getNotes(notes,this.time);
+    this.time = this.getTime(end)-this.getTime(start);
+    this.notes = this.getNotes(notes,this.time);
     this.title = title;
-    console.log(notes)
 }
 
 Music.prototype = {
     getTime(time){
-        return time.split(":")[0]*60+time.split(":")[1];
+        return Number(time.split(":")[0]*60)+Number(time.split(":")[1]);
     },
     getNotes(note, time){
         let notes = "";
@@ -24,10 +23,43 @@ Music.prototype = {
 }
 
 function solution(m, musicinfos) {
-    var answer = '';
+    var answer = null;
+	let mNote = changeNote(m);
+
     musicinfos.forEach(function(music){
         let infos = music.split(",");
-        let m = new Music(infos[0],infos[1],infos[2],infos[3]);
+        let tmpMusic = new Music(infos[0],infos[1],infos[2],changeNote(infos[3]));
+		
+		if(tmpMusic.notes.includes(mNote)){
+			if(answer===null){
+				answer = tmpMusic;
+			}else{
+				if(answer.time<tmpMusic.time){
+					answer = tmpMusic;
+				}
+			}
+		}
     })
-    return answer;
+	
+	if(answer===null){
+		return "(None)";
+	}
+    return answer.title;
+}
+
+function changeNote(oriNote){
+	let note = "";
+	for (let i = 1; i < oriNote.length; i++) {
+		let tmp = oriNote.charAt(i - 1);
+		if (oriNote.charAt(i) === '#') {
+			tmp = oriNote.charAt(i-1).toLowerCase();
+			i++;
+		}
+		note += tmp;
+	}
+	if(oriNote.charAt(oriNote.length-1)==='#'){
+        return note;
+	}
+	note += oriNote.charAt(oriNote.length-1);
+    return note;
 }
