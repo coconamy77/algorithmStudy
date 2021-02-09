@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Solution_메뉴리뉴얼 {
-	static List<String> list = new ArrayList();
+	static List<String> list = new ArrayList<String>();
 	static int index = 0;
 
 	public void getCourse(String order, int count, int[] intCourse, int start, int dept) {
