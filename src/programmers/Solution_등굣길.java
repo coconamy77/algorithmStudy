@@ -4,49 +4,44 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Solution_등굣길 {
-	static int[][] map;
-    static int[] dx = {0,1};
-    static int[] dy = {1,0};
-    static int M,N;
-    
-    public int solution(int m, int n, int[][] puddles) {
-        map = new int[m][n];
-        M = m;
-        N = n;
-        
-        for (int[] mn: puddles){
-            map[mn[0]-1][mn[1]-1] = -1;
-        }
-        
-        map[0][0] =1;
-        Queue<Integer> q = new LinkedList<>();
-        q.add(0);
-        
-        while(!q.isEmpty()){
-            int x = q.poll();
-            int y = x%1000;
-            x = x/1000;
-            
-            int count = map[x][y];
-            
-            for(int d = 0; d<2; d++){
-            int nx = x+dx[d];
-            int ny = y+dy[d];
-            
-                if(nx>=0 && nx<M && ny>=0 && ny<N){
-                    if(map[nx][ny]==-1){
-                        continue;
-                    }
-                    if((nx<m || ny<n)&& map[nx][ny]==0){
-                        q.add(nx*1000+ny);
-                    }
-                    map[nx][ny] += count%1000000007;
-                }
-            }
-        }
-        
-        int answer = map[m-1][n-1];
-        
-        return answer;
-    }
+	static int[][] dp;
+	static int[] dx = { 0, 1 };
+	static int[] dy = { 1, 0 };
+	static int M, N;
+
+	public int dp(int x, int y) {
+		if (x == M - 1 && y == N - 1) {
+			return 1;
+		}
+
+		int count = 0;
+		for (int d = 0; d < 2; d++) {
+			int nx = x + dx[d];
+			int ny = y + dy[d];
+
+			if (nx >= 0 && ny >= 0 && nx < M && ny < N && dp[nx][ny] > -1) {
+				if (dp[nx][ny] == 0) {
+					count += dp(nx, ny);
+				} else {
+					count += dp[nx][ny];
+				}
+			}
+		}
+		count %= 1000000007;
+		dp[x][y] = count;
+		return count;
+	}
+
+	public int solution(int m, int n, int[][] puddles) {
+		M = m;
+		N = n;
+
+		dp = new int[M][N];
+
+		for (int[] mn : puddles) {
+			dp[mn[0] - 1][mn[1] - 1] = -1;
+		}
+
+		return dp(0, 0);
+	}
 }
