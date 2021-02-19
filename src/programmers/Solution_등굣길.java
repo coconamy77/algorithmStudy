@@ -1,8 +1,5 @@
 package programmers;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 public class Solution_등굣길 {
 	static int[][] dp;
 	static int[] dx = { 0, 1 };
