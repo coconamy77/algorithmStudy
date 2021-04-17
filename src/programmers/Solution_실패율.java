@@ -21,12 +21,3 @@ class Stage implements Comparable<Stage>{
 		return 1;
 	}
 }
-public class Solution_실패율 {
-	class Solution {
-	    public int[] solution(int N, int[] stages) {
-	        int[] answer = {};
-	        
-	        return answer;
-	    }
-	}
-}
