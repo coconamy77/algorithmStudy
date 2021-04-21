@@ -39,8 +39,8 @@ public class Main_20055_컨베이어벨트위에로봇 {
 		
 		int answer = 0; 
 		while(count<K){
-			System.out.println(s+" "+e);
-			System.out.println(Arrays.toString(belt));
+//			System.out.println(s+" "+e);
+//			System.out.println(Arrays.toString(belt));
 			answer++;
 			//1
 			s = go(s,N);
@@ -72,7 +72,8 @@ public class Main_20055_컨베이어벨트위에로봇 {
 						}
 						belt[next] *= -1;
 						if(next==e){
-							
+							belt[next] *=-1;
+							belt[next]--;
 						}
 					}
 				}
@@ -83,8 +84,8 @@ public class Main_20055_컨베이어벨트위에로봇 {
 				}
 				belt[s] *= -1;
 			}
-			System.out.println("answer = "+answer);
-			System.out.println(Arrays.toString(belt));
+//			System.out.println("answer = "+answer);
+//			System.out.println(Arrays.toString(belt));
 		}
 		
 		System.out.println(answer);
