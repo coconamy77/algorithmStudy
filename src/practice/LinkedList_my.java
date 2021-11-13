@@ -18,7 +18,7 @@ class ListNode{
 	}
 }
 
-public class LinkedList {
+public class LinkedList_my {
 	ListNode head = null;
 	
 	
